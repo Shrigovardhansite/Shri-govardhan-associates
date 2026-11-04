@@ -1,0 +1,1806 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<title>SGA | Shri Govardhan Associates</title>
+<style>
+:root{--ink:#172a36;--ink-soft:#42515a;--glass:rgba(255,255,255,.72);--glass-border:rgba(255,255,255,.88);--shadow:0 10px 36px rgba(20,36,46,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#f7f8f7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+/* HEADER */
+.site-header{position:relative;z-index:5;width:100%;background:rgba(255,255,255,.9);border-bottom:1px solid rgba(23,42,54,.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.header-inner{width:min(1440px,100%);min-height:82px;margin:0 auto;padding:0 clamp(20px,5vw,76px);display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{display:inline-flex;align-items:center;gap:12px;min-width:max-content}
+.brand-mark{
+  width:77px;
+  height:63px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  flex:0 0 77px;
+  overflow:visible;
+  background:transparent;
+  border-radius:12px;
+}
+.brand-mark img{
+  width:77px;
+  height:63px;
+  display:block;
+  object-fit:contain;
+  object-position:left center;
+  transform:translateX(20px);
+}
+.desktop-nav{display:flex;align-items:center;gap:clamp(18px,2.6vw,38px)}.desktop-nav a{font-size:12px;color:#4b5961;transition:color .2s ease}.desktop-nav a:hover{color:#101f28}
+.header-cta{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;border:1px solid rgba(23,42,54,.16);border-radius:999px;font-size:12px;font-weight:600;transition:background .2s ease,color .2s ease,transform .2s ease;white-space:nowrap}
+.header-cta:hover{background:var(--ink);color:white;transform:translateY(-1px)}
+.menu-toggle{display:none;width:42px;height:42px;border:1px solid rgba(23,42,54,.13);background:rgba(255,255,255,.72);border-radius:50%;color:var(--ink);font-size:20px;cursor:pointer}
+/* HERO */
+.hero{position:relative;isolation:isolate;min-height:clamp(560px,calc(100svh - 82px),900px);display:grid;place-items:center;overflow:hidden;background:#d7dcde}
+.hero-image{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 54%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(0,0,0,.20)}
+.hero-copy{display:flex;flex-direction:column;align-items:center}.hero-content{width:min(1100px,calc(100% - 36px));display:flex;justify-content:center;align-items:center;text-align:center;padding:44px 0}
+.hero-eyebrow{margin:0 0 18px;color:rgba(255,255,255,.96);font-size:clamp(9px,.9vw,12px);line-height:1.4;font-weight:700;letter-spacing:.20em;text-transform:uppercase;text-align:center;text-shadow:0 2px 14px rgba(12,26,34,.38);opacity:0;transform:translateY(12px);animation:titleReveal .8s cubic-bezier(.2,.75,.25,1) .08s forwards}
+.hero-title{margin:0;color:#fff;font-size:clamp(2.5rem,6.5vw,6.2rem);line-height:.99;letter-spacing:-.065em;font-weight:750;text-wrap:balance;text-shadow:0 3px 24px rgba(12,26,34,.28);opacity:0;transform:translateY(18px);animation:titleReveal 1s cubic-bezier(.2,.75,.25,1) .18s forwards}
+@keyframes titleReveal{to{opacity:1;transform:translateY(0)}}
+.hero-title span{display:inline-block;padding:.13em .24em .19em;border:1px solid rgba(255,255,255,.36);border-radius:.22em;background:linear-gradient(135deg,rgba(255,255,255,.20),rgba(255,255,255,.06));box-shadow:inset 0 1px 0 rgba(255,255,255,.32),0 8px 34px rgba(15,28,36,.08);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.scroll-cue{position:absolute;left:50%;bottom:clamp(22px,4.5vh,44px);z-index:1;display:flex;flex-direction:column;align-items:center;gap:12px;color:rgba(255,255,255,.94);transform:translateX(-50%);text-shadow:0 1px 12px rgba(9,21,28,.38);opacity:0;animation:cueReveal .8s ease 1s forwards}
+.scroll-label{font-size:9px;font-weight:600;letter-spacing:.22em;white-space:nowrap}.scroll-mouse{width:24px;height:39px;border:1px solid rgba(255,255,255,.82);border-radius:999px;display:flex;justify-content:center;padding-top:7px;background:rgba(255,255,255,.10);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 4px 18px rgba(10,20,26,.10);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.scroll-wheel{width:3px;height:7px;border-radius:99px;background:#fff;animation:wheelMove 1.6s ease-in-out infinite}.scroll-chevron{display:none;width:12px;height:12px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);animation:chevronMove 1.6s ease-in-out infinite}
+@keyframes wheelMove{0%{transform:translateY(0);opacity:1}65%{transform:translateY(9px);opacity:.25}100%{transform:translateY(0);opacity:1}}
+@keyframes chevronMove{0%,100%{transform:translateY(-2px) rotate(45deg);opacity:.65}50%{transform:translateY(4px) rotate(45deg);opacity:1}}@keyframes cueReveal{to{opacity:1}}
+/* CHANNEL PARTNERS */
+.channel-partners{width:100%;padding:76px 5% 82px;background:#fff;overflow:hidden}.partners-container{width:100%;max-width:1320px;margin:0 auto}.partners-heading{text-align:center;margin-bottom:42px}
+.partners-eyebrow{display:block;margin-bottom:12px;color:#65758a;font-size:10px;font-weight:600;letter-spacing:2.4px}.partners-heading h2{margin:0;color:#142a46;font-size:clamp(28px,3vw,38px);font-weight:600;line-height:1.2;letter-spacing:-1.1px}
+.partners-heading p{margin:12px 0 0;color:#7b8491;font-size:14px;line-height:1.7}.partners-logos{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%}
+.partner-logo{flex:1 1 0;display:flex;align-items:center;justify-content:center;min-width:0;min-height:78px;padding:0;background:transparent;border:0;box-shadow:none;opacity:0;transform:translateY(12px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.75,.25,1)}
+.partner-logo:nth-child(1){transition-delay:0ms}.partner-logo:nth-child(2){transition-delay:90ms}.partner-logo:nth-child(3){transition-delay:180ms}.partner-logo:nth-child(4){transition-delay:270ms}.partner-logo:nth-child(5){transition-delay:360ms}.partner-logo:nth-child(6){transition-delay:450ms}
+.channel-partners.is-visible .partner-logo{opacity:1;transform:translateY(0)}.partner-logo img{display:block;width:100%;max-width:150px;height:58px;object-fit:contain;object-position:center;filter:none;opacity:1;transition:transform 280ms cubic-bezier(.2,.75,.25,1),filter 280ms ease}
+@media(hover:hover){.partner-logo:hover img{transform:translateY(-3px) scale(1.025);filter:drop-shadow(0 5px 7px rgba(20,36,46,.10))}}.partner-logo:focus-within{outline:2px solid rgba(23,42,54,.15);outline-offset:5px;border-radius:6px}
+/* FEATURED PROPERTIES — compact details for a four-card desktop grid */
+.featured-properties{position:relative;isolation:isolate;overflow:hidden;padding:clamp(58px,7vw,96px) clamp(18px,4.5vw,68px) clamp(64px,7vw,100px);background:linear-gradient(145deg,#f3f7fc 0%,#eaf0f7 48%,#f8fafc 100%)}
+.featured-properties:before,.featured-properties:after{content:"";position:absolute;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(2px)}
+.featured-properties:before{width:420px;height:420px;top:-190px;right:-120px;background:radial-gradient(circle,rgba(255,255,255,.95),rgba(255,255,255,0) 70%)}
+.featured-properties:after{width:360px;height:360px;bottom:-190px;left:-120px;background:radial-gradient(circle,rgba(196,215,237,.42),rgba(255,255,255,0) 72%)}
+.properties-container{width:100%;max-width:1440px;margin:0 auto}.properties-heading{text-align:center;margin:0 auto 38px;max-width:700px}
+.properties-eyebrow{display:block;margin:0 0 12px;color:#58718e;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
+.properties-heading h2{margin:0;color:#102b4e;font-size:clamp(30px,3.3vw,44px);font-weight:650;letter-spacing:-1.5px;line-height:1.12}
+.properties-heading p{margin:13px 0 0;color:#66788d;font-size:14px;line-height:1.7}
+.properties-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 16px;align-items:stretch}
+.property-card{position:relative;min-width:0;overflow:hidden;border:1px solid rgba(255,255,255,.98);border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.88),rgba(255,255,255,.58));box-shadow:0 12px 34px rgba(24,52,82,.12),inset 0 1px 0 rgba(255,255,255,1),inset 0 -1px 0 rgba(255,255,255,.55);backdrop-filter:blur(26px) saturate(145%);-webkit-backdrop-filter:blur(26px) saturate(145%);transition:transform .5s cubic-bezier(.2,.75,.25,1),box-shadow .5s ease,border-color .5s ease;animation:propertyReveal .9s cubic-bezier(.2,.75,.25,1) both}
+.property-card:nth-child(2){animation-delay:.06s}.property-card:nth-child(3){animation-delay:.12s}.property-card:nth-child(4){animation-delay:.18s}.property-card:nth-child(5){animation-delay:.24s}.property-card:nth-child(6){animation-delay:.30s}.property-card:nth-child(7){animation-delay:.36s}.property-card:nth-child(8){animation-delay:.42s}
+@keyframes propertyReveal{from{opacity:0;transform:translateY(22px) scale(.985);filter:blur(4px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes glassFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-2px,0)}}
+@media(hover:hover){.property-card:hover{transform:translateY(-7px) scale(1.008);border-color:rgba(255,255,255,.98);background:linear-gradient(145deg,rgba(255,255,255,.76),rgba(255,255,255,.38));box-shadow:0 22px 48px rgba(24,52,82,.16),0 0 0 1px rgba(255,255,255,.22),inset 0 1px 0 rgba(255,255,255,1),inset 0 -1px 0 rgba(255,255,255,.28)}}
+.property-card:before{content:"";position:absolute;inset:-120% -45%;z-index:3;pointer-events:none;border-radius:inherit;background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.52) 48%,rgba(255,255,255,.18) 53%,transparent 63%);transform:translateX(-55%);animation:glassShimmer 5.5s ease-in-out infinite;mix-blend-mode:screen}.property-card:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;background:linear-gradient(145deg,rgba(255,255,255,.34),rgba(255,255,255,0) 32%,rgba(255,255,255,.12) 70%,rgba(255,255,255,.28));box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+@keyframes glassShimmer{0%,25%{transform:translateX(-65%);opacity:0}38%{opacity:1}62%{opacity:1}78%,100%{transform:translateX(65%);opacity:0}}
+@keyframes propertyReveal{0%{opacity:0;transform:translateY(34px) scale(.96);filter:blur(7px)}65%{opacity:1;filter:blur(0)}100%{transform:translateY(0) scale(1);filter:blur(0)}}
+@media(hover:hover){.property-card:hover{transform:translateY(-9px) scale(1.012);border-color:#fff;box-shadow:0 26px 55px rgba(24,52,82,.18),0 0 24px rgba(255,255,255,.55),inset 0 1px 0 #fff;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(255,255,255,.68))}.property-card:hover:before{animation-duration:2.2s}}
+.property-image-wrap{position:relative;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#dbe5ef,#edf2f7)}
+.property-image-wrap img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.75,.25,1)}
+@media(hover:hover){.property-card:hover .property-image-wrap img{transform:scale(1.055)}}
+.property-status{position:absolute;top:12px;left:12px;z-index:1;padding:7px 9px;border:1px solid rgba(255,255,255,.8);border-radius:7px;background:rgba(255,255,255,.78);color:#17385f;font-size:9px;font-weight:750;letter-spacing:1px;text-transform:uppercase;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.property-card-body{padding:12px 12px 11px}.property-location{margin:0 0 6px;color:#657b94;font-size:8px;font-weight:700;letter-spacing:.75px;text-transform:uppercase;line-height:1.5}
+.property-title{margin:0;color:#132f52;font-size:clamp(11px,.92vw,14px);font-weight:650;line-height:1.35;letter-spacing:-.15px;min-height:2.7em}
+.property-type{margin:6px 0 0;color:#243c56;font-size:10px;line-height:1.4;min-height:2.8em}
+.property-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:10px}
+.price-option{min-width:0}.price-option-label{margin:0 0 3px;color:#66788c;font-size:8px;line-height:1.3;overflow-wrap:anywhere}
+.price-option-value{margin:0;color:#102b4e;font-size:clamp(10px,.82vw,12px);font-weight:750;line-height:1.3;letter-spacing:-.15px;overflow-wrap:anywhere}
+.property-options.options-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.property-options.options-one{grid-template-columns:minmax(0,1fr)}
+.property-card-footer{display:flex;align-items:center;gap:8px;margin-top:11px;padding-top:9px;border-top:1px solid rgba(28,59,91,.09)}
+.property-builder{display:flex;align-items:center;justify-content:flex-start;min-width:0;width:76px;height:28px}
+.property-builder img{display:block;max-width:100%;max-height:26px;object-fit:contain;object-position:left center}
+.property-builder-fallback{color:#17385f;font-size:10px;font-weight:800;letter-spacing:.5px}
+.property-card-arrow{display:grid;place-items:center;margin-left:auto;flex:0 0 26px;width:26px;height:26px;border:1px solid rgba(23,56,95,.13);border-radius:50%;color:#17385f;font-size:16px;transition:background .2s ease,color .2s ease,transform .2s ease}
+.property-card:hover .property-card-arrow{background:#15365b;color:#fff;transform:translate(1px,-1px)}
+.properties-actions{display:flex;justify-content:center;margin-top:38px}
+.explore-projects{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:0 23px;border:1px solid #17385f;border-radius:7px;background:#17385f;color:#fff;font-size:12px;font-weight:650;letter-spacing:.1px;box-shadow:0 5px 16px rgba(23,56,95,.12);transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+.explore-projects span{font-size:17px;transition:transform .2s ease}.explore-projects:hover{background:#0e2847;transform:translateY(-2px);box-shadow:0 9px 22px rgba(23,56,95,.18)}.explore-projects:hover span{transform:translateX(3px)}
+
+/* WHY CHOOSE SGA */
+.why-sga{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:clamp(62px,7vw,96px) clamp(18px,4.5vw,68px) clamp(68px,7vw,100px);
+  background:linear-gradient(145deg,#f7faff 0%,#edf3f9 48%,#fbfcfe 100%);
+}
+.why-sga:before,.why-sga:after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  border-radius:50%;
+  filter:blur(2px);
+}
+.why-sga:before{
+  width:430px;height:430px;top:-190px;left:-150px;
+  background:radial-gradient(circle,rgba(255,255,255,.98),rgba(255,255,255,0) 70%);
+}
+.why-sga:after{
+  width:400px;height:400px;right:-150px;bottom:-210px;
+  background:radial-gradient(circle,rgba(190,211,235,.36),rgba(255,255,255,0) 72%);
+}
+.why-sga-container{width:100%;max-width:1440px;margin:0 auto}
+.why-sga-heading{text-align:center;max-width:720px;margin:0 auto 38px}
+.why-sga-eyebrow{
+  display:block;margin:0 0 12px;color:#58718e;font-size:10px;
+  font-weight:700;letter-spacing:2.5px;text-transform:uppercase
+}
+.why-sga-heading h2{
+  margin:0;color:#102b4e;font-size:clamp(30px,3.3vw,44px);
+  font-weight:650;letter-spacing:-1.5px;line-height:1.12
+}
+.why-sga-heading p{
+  margin:13px 0 0;color:#66788d;font-size:14px;line-height:1.7
+}
+.why-sga-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+  align-items:stretch;
+}
+.why-sga-card{
+  position:relative;
+  min-width:0;
+  min-height:218px;
+  padding:27px 23px 24px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.98);
+  border-radius:20px;
+  background:linear-gradient(145deg,rgba(255,255,255,.91),rgba(255,255,255,.59));
+  box-shadow:
+    0 12px 34px rgba(24,52,82,.10),
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(255,255,255,.55);
+  backdrop-filter:blur(25px) saturate(145%);
+  -webkit-backdrop-filter:blur(25px) saturate(145%);
+  opacity:0;
+  transform:translateY(72px);
+  filter:blur(3px);
+  transition:
+    opacity 1.05s cubic-bezier(.22,.61,.36,1),
+    transform 1.05s cubic-bezier(.22,.61,.36,1),
+    box-shadow .45s ease,
+    border-color .45s ease,
+    background .45s ease;
+}
+.why-sga-card:nth-child(1){transition-delay:.05s}
+.why-sga-card:nth-child(2){transition-delay:.17s}
+.why-sga-card:nth-child(3){transition-delay:.29s}
+.why-sga-card:nth-child(4){transition-delay:.41s}
+.why-sga.is-visible .why-sga-card{
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+}
+.why-sga-card:before{
+  content:"";
+  position:absolute;
+  inset:-120% -45%;
+  z-index:3;
+  pointer-events:none;
+  border-radius:inherit;
+  background:linear-gradient(
+    110deg,
+    transparent 38%,
+    rgba(255,255,255,.58) 48%,
+    rgba(255,255,255,.18) 53%,
+    transparent 63%
+  );
+  transform:translateX(-65%);
+  opacity:0;
+}
+.why-sga.is-visible .why-sga-card:before{
+  animation:whyGlassShimmer 4.8s ease-in-out .45s 1;
+}
+.why-sga-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  border-radius:inherit;
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.40),
+    rgba(255,255,255,0) 34%,
+    rgba(255,255,255,.12) 70%,
+    rgba(255,255,255,.30)
+  );
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);
+}
+@keyframes whyGlassShimmer{
+  0%,20%{transform:translateX(-65%);opacity:0}
+  35%{opacity:1}
+  58%{opacity:1}
+  78%,100%{transform:translateX(65%);opacity:0}
+}
+.why-sga-icon{
+  position:relative;
+  z-index:4;
+  display:grid;
+  place-items:center;
+  width:46px;
+  height:46px;
+  margin-bottom:22px;
+  border:1px solid rgba(255,255,255,.98);
+  border-radius:14px;
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(224,235,247,.70));
+  box-shadow:
+    0 8px 22px rgba(24,52,82,.10),
+    inset 0 1px 0 #fff;
+  color:#17385f;
+}
+.why-sga-icon svg{
+  width:21px;height:21px;display:block;
+  fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round
+}
+.why-sga-card h3{
+  position:relative;z-index:4;
+  margin:0;color:#132f52;font-size:17px;font-weight:700;
+  line-height:1.3;letter-spacing:-.3px
+}
+.why-sga-card p{
+  position:relative;z-index:4;
+  margin:9px 0 0;color:#687b90;font-size:12px;
+  line-height:1.7;max-width:290px
+}
+@media(hover:hover){
+  .why-sga-card:hover{
+    transform:translateY(-8px) scale(1.012);
+    border-color:#fff;
+    background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(255,255,255,.70));
+    box-shadow:
+      0 24px 48px rgba(24,52,82,.15),
+      0 0 24px rgba(255,255,255,.62),
+      inset 0 1px 0 #fff;
+  }
+  .why-sga-card:hover .why-sga-icon{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(24,52,82,.13),inset 0 1px 0 #fff
+  }
+}
+.why-sga-icon{transition:transform .35s ease,box-shadow .35s ease}
+
+
+/* OUR SERVICES — LIQUID WHITE GLASS */
+.services-sga{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:clamp(68px,7.5vw,104px) clamp(18px,5vw,76px) clamp(74px,8vw,112px);
+  background:
+    radial-gradient(circle at 8% 12%,rgba(255,255,255,.98),rgba(255,255,255,0) 32%),
+    radial-gradient(circle at 92% 86%,rgba(205,222,240,.55),rgba(255,255,255,0) 34%),
+    linear-gradient(145deg,#f8fbfe 0%,#edf3f9 52%,#f9fbfd 100%);
+}
+.services-sga:before{
+  content:"";
+  position:absolute;
+  width:520px;height:520px;top:-280px;right:-160px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.95),rgba(255,255,255,0) 70%);
+  pointer-events:none;
+}
+.services-container{position:relative;width:100%;max-width:1360px;margin:0 auto}
+.services-heading{max-width:780px;margin:0 auto 42px;text-align:center}
+.services-eyebrow{
+  display:block;margin:0 0 12px;color:#58718e;
+  font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase
+}
+.services-heading h2{
+  margin:0;color:#102b4e;font-size:clamp(31px,3.6vw,48px);
+  line-height:1.08;letter-spacing:-1.7px;font-weight:650
+}
+.services-heading p{
+  margin:13px auto 0;color:#687b90;font-size:14px;
+  line-height:1.7;max-width:610px
+}
+.services-stage{
+  display:grid;
+  grid-template-columns:minmax(300px,.76fr) minmax(480px,1.24fr);
+  gap:clamp(22px,3.5vw,52px);
+  align-items:stretch;
+}
+.services-menu{
+  position:relative;
+  overflow:hidden;
+  padding:7px;
+  border:1px solid rgba(255,255,255,.96);
+  border-radius:25px;
+  background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(255,255,255,.43));
+  box-shadow:
+    0 22px 55px rgba(36,68,101,.12),
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(255,255,255,.60);
+  backdrop-filter:blur(28px) saturate(155%);
+  -webkit-backdrop-filter:blur(28px) saturate(155%);
+}
+.services-menu:before{
+  content:"";
+  position:absolute;inset:-80% -25%;
+  background:linear-gradient(110deg,transparent 42%,rgba(255,255,255,.50) 49%,rgba(255,255,255,.12) 54%,transparent 62%);
+  transform:translateX(-70%);
+  animation:servicesGlassSweep 7s ease-in-out infinite;
+  pointer-events:none
+}
+@keyframes servicesGlassSweep{
+  0%,24%{transform:translateX(-70%);opacity:0}
+  35%{opacity:1}
+  54%{opacity:1}
+  70%,100%{transform:translateX(70%);opacity:0}
+}
+.service-item{
+  position:relative;
+  z-index:1;
+  width:100%;
+  min-height:82px;
+  display:grid;
+  grid-template-columns:48px 1fr 34px;
+  align-items:center;
+  gap:12px;
+  padding:0 16px;
+  border:0;
+  border-bottom:1px solid rgba(33,66,99,.08);
+  background:transparent;
+  color:#73869a;
+  text-align:left;
+  font:inherit;
+  cursor:pointer;
+  transition:color .35s ease,transform .35s ease,background .35s ease
+}
+.service-item:last-child{border-bottom:0}
+.service-item:after{
+  content:"";
+  position:absolute;left:9px;right:9px;top:7px;bottom:7px;
+  z-index:-1;
+  border-radius:18px;
+  border:1px solid transparent;
+  background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
+  opacity:0;
+  box-shadow:0 9px 24px rgba(37,68,101,.08),inset 0 1px 0 rgba(255,255,255,.9);
+  transition:opacity .35s ease,border-color .35s ease
+}
+.service-item.is-active{color:#17385f;transform:translateX(3px)}
+.service-item.is-active:after{
+  opacity:1;
+  border-color:rgba(255,255,255,.95)
+}
+.service-number{
+  font-size:9px;font-weight:750;letter-spacing:1.7px;color:#9aafc3;
+  transition:color .3s ease
+}
+.service-item.is-active .service-number{color:#5d83a8}
+.service-name{
+  margin:0;font-size:clamp(18px,1.9vw,24px);
+  font-weight:650;letter-spacing:-.5px
+}
+.service-arrow{
+  width:32px;height:32px;display:grid;place-items:center;
+  border:1px solid rgba(52,87,120,.12);border-radius:50%;
+  color:#6b8299;font-size:15px;
+  background:rgba(255,255,255,.30);
+  transition:transform .35s ease,background .35s ease,color .35s ease,box-shadow .35s ease
+}
+.service-item.is-active .service-arrow{
+  background:#fff;color:#17385f;
+  transform:translate(2px,-1px);
+  box-shadow:0 7px 17px rgba(36,68,101,.12),inset 0 1px 0 #fff
+}
+.services-visual{
+  position:relative;
+  min-height:0;
+  height:100%;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.98);
+  border-radius:28px;
+  background:#dce7f1;
+  box-shadow:
+    0 25px 65px rgba(30,61,92,.15),
+    inset 0 1px 0 rgba(255,255,255,1);
+}
+.service-image{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  opacity:0;
+  transform:scale(1.025);
+  transition:opacity .75s ease,transform 1.15s cubic-bezier(.2,.75,.25,1)
+}
+.service-image.is-active{opacity:1;transform:scale(1)}
+.service-image:not([src]),.service-image.is-missing{visibility:hidden}
+.services-visual:before{
+  content:"";
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(11,35,60,0) 30%,rgba(11,35,60,.70) 100%)
+}
+.services-visual:after{
+  content:"";
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  border-radius:inherit;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 30px 70px rgba(255,255,255,.08)
+}
+.service-progress{
+  position:absolute;z-index:4;top:22px;right:23px;
+  display:flex;align-items:center;gap:9px;
+  color:rgba(255,255,255,.92);font-size:9px;font-weight:700;letter-spacing:1.5px;
+  text-shadow:0 1px 8px rgba(0,0,0,.18)
+}
+.service-progress-line{
+  position:relative;width:52px;height:1px;background:rgba(255,255,255,.45);overflow:hidden
+}
+.service-progress-fill{
+  display:block;width:25%;height:100%;background:#fff;
+  transition:width .5s cubic-bezier(.2,.75,.25,1)
+}
+.service-visual-copy{
+  position:absolute;z-index:4;left:30px;right:30px;bottom:27px;
+  padding:20px 21px 18px;
+  border:1px solid rgba(255,255,255,.36);
+  border-radius:19px;
+  background:linear-gradient(145deg,rgba(255,255,255,.23),rgba(255,255,255,.08));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 12px 35px rgba(7,25,43,.12);
+  backdrop-filter:blur(15px) saturate(135%);
+  -webkit-backdrop-filter:blur(15px) saturate(135%);
+}
+.service-tag{
+  display:inline-flex;margin:0 0 9px;padding:6px 9px;
+  border:1px solid rgba(255,255,255,.34);border-radius:999px;
+  background:rgba(255,255,255,.14);color:#f5f9fd;
+  font-size:8px;font-weight:750;letter-spacing:1.45px;text-transform:uppercase
+}
+.service-visual-copy h3{
+  margin:0;color:#fff;font-size:clamp(23px,2.6vw,34px);
+  font-weight:620;line-height:1.08;letter-spacing:-.9px
+}
+.service-visual-copy p{
+  margin:8px 0 0;color:rgba(255,255,255,.80);
+  font-size:11px;line-height:1.65;max-width:620px
+}
+@media(hover:hover){
+  .service-item:hover{color:#17385f}
+  .service-item:hover .service-arrow{transform:translateX(2px)}
+}
+@media(max-width:900px){
+  .services-stage{grid-template-columns:1fr;gap:22px}
+  .services-visual{height:300px;min-height:300px;order:-1}
+}
+@media(max-width:600px){
+  .services-sga{padding:58px 18px 70px}
+  .services-heading{margin-bottom:29px}
+  .services-heading p{font-size:12px}
+  .services-menu{border-radius:20px;padding:5px}
+  .service-item{min-height:72px;grid-template-columns:40px 1fr 30px;padding:0 12px}
+  .service-item:after{left:6px;right:6px;top:5px;bottom:5px;border-radius:15px}
+  .service-name{font-size:17px}
+  .services-visual{height:280px;min-height:280px;border-radius:20px}
+  .service-visual-copy{left:17px;right:17px;bottom:17px;padding:16px 16px 15px;border-radius:16px}
+  .service-visual-copy h3{font-size:25px}
+  .service-visual-copy p{font-size:10.5px}
+  .service-progress{top:17px;right:17px}
+}
+
+
+/* ABOUT SGA + FOUNDER + TEAM */
+.about-sga{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) clamp(18px,5vw,76px) clamp(78px,8vw,118px);background:linear-gradient(145deg,#f8fbfe 0%,#edf3f9 52%,#fbfcfe 100%)}
+.about-sga:before,.about-sga:after{content:"";position:absolute;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(2px)}
+.about-sga:before{width:500px;height:500px;left:-190px;top:-220px;background:radial-gradient(circle,rgba(255,255,255,.98),rgba(255,255,255,0) 70%)}
+.about-sga:after{width:440px;height:440px;right:-170px;bottom:-230px;background:radial-gradient(circle,rgba(190,211,235,.34),rgba(255,255,255,0) 72%)}
+.about-container{width:100%;max-width:1360px;margin:0 auto}
+.about-heading{text-align:center;max-width:1180px;margin:0 auto 34px}
+.about-eyebrow,.team-eyebrow{display:block;margin:0 0 12px;color:#58718e;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
+.about-heading h2,.team-heading h2{margin:0;color:#102b4e;font-size:clamp(31px,3.15vw,46px);line-height:1.08;letter-spacing:-1.7px;font-weight:650}
+.about-heading h2{white-space:nowrap}.about-heading p,.team-heading p{margin:13px auto 0;color:#687b90;font-size:14px;line-height:1.7;max-width:620px}
+.founder-card{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);min-height:420px;overflow:hidden;border:1px solid rgba(255,255,255,.98);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(255,255,255,.54));box-shadow:0 25px 65px rgba(30,61,92,.13),inset 0 1px 0 #fff,inset 0 -1px 0 rgba(255,255,255,.55);backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%);opacity:0;transform:translateY(65px);filter:blur(4px);transition:opacity 1s cubic-bezier(.22,.61,.36,1),transform 1s cubic-bezier(.22,.61,.36,1),filter 1s ease}
+.about-sga.is-visible .founder-card{opacity:1;transform:translateY(0);filter:blur(0)}
+.founder-copy{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(30px,3.6vw,48px);border-right:1px solid rgba(23,56,95,.07)}
+.founder-copy:before{content:"";position:absolute;inset:-80% -35%;pointer-events:none;background:linear-gradient(110deg,transparent 43%,rgba(255,255,255,.52) 50%,rgba(255,255,255,.12) 55%,transparent 63%);transform:translateX(-70%);opacity:0}
+.about-sga.is-visible .founder-copy:before{animation:founderShimmer 5.2s ease-in-out .55s 1}
+@keyframes founderShimmer{0%,20%{transform:translateX(-70%);opacity:0}36%{opacity:1}58%{opacity:1}78%,100%{transform:translateX(70%);opacity:0}}
+.founder-kicker{position:relative;z-index:1;margin:0 0 11px;padding-left:0;transform:none;color:#6a8198;font-size:10px;font-weight:750;letter-spacing:2px;text-transform:uppercase}
+.founder-copy h3{position:relative;z-index:1;margin:0;color:#102b4e;font-size:clamp(28px,3.35vw,46px);line-height:1.02;letter-spacing:-1.7px;font-weight:650;max-width:620px}
+.founder-copy p{position:relative;z-index:1;margin:16px 0 0;color:#66788d;font-size:12px;line-height:1.62;max-width:610px}
+.founder-story{display:grid;gap:7px}
+.founder-meta{position:relative;z-index:1;display:flex;align-items:center;gap:18px;margin-top:22px;padding-top:16px;border-top:1px solid rgba(23,56,95,.10)}
+.founder-name{margin:0;color:#17385f;font-size:16px;font-weight:750;letter-spacing:-.2px}
+.founder-role{margin:4px 0 0;color:#7a8da1;font-size:10px;font-weight:650;letter-spacing:1.1px;text-transform:uppercase}
+.founder-est{margin-left:auto;display:flex;align-items:center;padding-left:24px;border-left:1px solid rgba(23,56,95,.10)}
+.founder-est strong{display:block;color:#17385f;font-size:11px;font-weight:750;letter-spacing:1.8px;text-transform:uppercase;white-space:nowrap}
+.founder-est span{display:none}
+.founder-photo{position:relative;min-height:420px;overflow:hidden;background:#dce7f1}
+.founder-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top;transform:scale(1.045);transition:transform 1.3s cubic-bezier(.2,.75,.25,1)}
+.about-sga.is-visible .founder-photo img{transform:scale(1)}
+.founder-photo:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.18),transparent 28%),linear-gradient(180deg,rgba(11,35,60,0) 48%,rgba(11,35,60,.28) 100%)}
+.founder-photo:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25),inset 0 30px 70px rgba(255,255,255,.08)}
+.founder-photo img:not([src]),.founder-photo img.is-missing{visibility:hidden}
+.team-heading{margin:76px auto 34px;text-align:center}
+.team-carousel{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  padding:2px 1px 6px;
+  touch-action:pan-y;
+  cursor:grab;
+}
+.team-carousel.is-dragging{cursor:grabbing}
+.team-grid{
+  display:flex;
+  flex-wrap:nowrap;
+  gap:18px;
+  width:100%;
+  align-items:stretch;
+  will-change:transform;
+  transition:transform .82s cubic-bezier(.22,.61,.36,1);
+}
+.team-card{
+  position:relative;
+  flex:0 0 calc((1360px - 54px)/4);
+  min-width:0;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.98);
+  border-radius:20px;
+  background:linear-gradient(145deg,rgba(255,255,255,.91),rgba(255,255,255,.59));
+  box-shadow:0 12px 34px rgba(24,52,82,.10),inset 0 1px 0 #fff,inset 0 -1px 0 rgba(255,255,255,.55);
+  backdrop-filter:blur(25px) saturate(145%);
+  -webkit-backdrop-filter:blur(25px) saturate(145%);
+  opacity:1;
+  transform:none;
+  filter:none;
+  transition:transform .45s cubic-bezier(.2,.75,.25,1),box-shadow .4s ease,border-color .4s ease,background .4s ease;
+}
+.team-card:before{
+  content:"";
+  position:absolute;
+  inset:-120% -45%;
+  z-index:3;
+  pointer-events:none;
+  border-radius:inherit;
+  background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.48) 48%,rgba(255,255,255,.16) 53%,transparent 63%);
+  transform:translateX(-65%);
+  opacity:0;
+}
+.about-sga.is-visible .team-card:nth-child(-n+4):before{
+  animation:teamGlassShimmer 4.8s ease-in-out .35s 1;
+}
+@keyframes teamGlassShimmer{
+  0%,20%{transform:translateX(-65%);opacity:0}
+  35%{opacity:1}
+  58%{opacity:1}
+  78%,100%{transform:translateX(65%);opacity:0}
+}
+.team-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  border-radius:inherit;
+  background:linear-gradient(145deg,rgba(255,255,255,.30),rgba(255,255,255,0) 34%,rgba(255,255,255,.10) 70%,rgba(255,255,255,.24));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);
+}
+.team-photo{
+  position:relative;
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:linear-gradient(145deg,#dce7f1,#eef3f7)
+}
+.team-photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  transition:transform .75s cubic-bezier(.2,.75,.25,1),filter .75s ease
+}
+.team-photo img:not([src]),.team-photo img.is-missing{visibility:hidden}
+.team-photo:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),transparent 35%,rgba(11,35,60,.08))
+}
+.team-info{padding:17px 17px 19px}
+.team-info h3{margin:0;color:#132f52;font-size:15px;font-weight:700;line-height:1.3;letter-spacing:-.2px}
+.team-info p{margin:6px 0 0;color:#718397;font-size:9px;font-weight:650;letter-spacing:.75px;text-transform:uppercase;line-height:1.45}
+@media(hover:hover){
+  .team-card:hover{
+    transform:translateY(-6px) scale(1.008);
+    border-color:#fff;
+    background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(255,255,255,.70));
+    box-shadow:0 24px 48px rgba(24,52,82,.15),0 0 24px rgba(255,255,255,.62),inset 0 1px 0 #fff
+  }
+  .team-card:hover .team-photo img{transform:scale(1.035)}
+}
+@media(max-width:1400px){
+  .team-card{flex-basis:calc((100% - 54px)/4)}
+}
+@media(max-width:1050px){
+  .founder-card{grid-template-columns:1fr .82fr}
+  .team-grid{gap:14px}
+  .team-card{flex-basis:calc((100% - 42px)/4)}
+}
+@media(max-width:800px){
+  .founder-card{grid-template-columns:1fr;min-height:0}
+  .founder-copy{justify-content:center;border-right:0;border-bottom:1px solid rgba(23,56,95,.07);padding:38px 28px}
+  .founder-photo{height:auto;min-height:0;aspect-ratio:1/1.1;max-height:520px}
+  .team-grid{gap:14px}
+  .team-card{flex-basis:calc((100% - 14px)/2)}
+  .team-heading{margin-top:58px}
+}
+@media(max-width:520px){
+  .about-sga{padding:58px 18px 72px}
+  .about-heading{margin-bottom:28px}
+  .about-heading h2{font-size:clamp(25px,7vw,32px);line-height:1.08;letter-spacing:-1.25px;white-space:normal;max-width:100%;text-wrap:balance;overflow-wrap:normal}
+  .about-heading p,.team-heading p{font-size:12px}
+  .founder-card{border-radius:20px}
+  .founder-copy{padding:31px 22px}
+  .founder-copy h3{font-size:32px;letter-spacing:-1.1px}
+  .founder-copy p{font-size:12px;line-height:1.75;margin-top:18px}
+  .founder-meta{margin-top:24px;padding-top:17px;gap:10px}
+  .founder-name{font-size:14px}
+  .founder-est{padding-left:16px}
+  .founder-est strong{font-size:9px;letter-spacing:1.35px}
+  .founder-photo{aspect-ratio:1/1.1}
+  .team-carousel{padding-bottom:4px}
+  .team-grid{gap:12px}
+  .team-card{flex-basis:calc((100% - 12px)/2);border-radius:16px}
+  .team-info{padding:14px 12px 16px}
+  .team-info h3{font-size:13px}
+  .team-info p{font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){.founder-card,.team-card{opacity:1;transform:none;filter:none;transition:none}.founder-photo img,.team-photo img{transform:none!important;transition:none}.founder-copy:before{animation:none!important}}
+
+
+
+/* CLIENT TESTIMONIALS — 3 / 3 / 1 PREMIUM LIQUID-GLASS GRID */
+.client-testimonials{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:clamp(72px,8vw,112px) clamp(18px,5vw,76px) clamp(82px,8vw,120px);
+  background:linear-gradient(145deg,#f8fbfe 0%,#edf3f9 52%,#fbfcfe 100%);
+}
+.client-testimonials:before,.client-testimonials:after{
+  content:"";position:absolute;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(2px)
+}
+.client-testimonials:before{
+  width:500px;height:500px;left:-210px;top:-220px;
+  background:radial-gradient(circle,rgba(255,255,255,.98),rgba(255,255,255,0) 70%)
+}
+.client-testimonials:after{
+  width:460px;height:460px;right:-190px;bottom:-240px;
+  background:radial-gradient(circle,rgba(190,211,235,.34),rgba(255,255,255,0) 72%)
+}
+.testimonials-container{width:100%;max-width:1360px;margin:0 auto}
+.testimonials-heading{text-align:center;max-width:780px;margin:0 auto 42px}
+.testimonials-eyebrow{
+  display:block;margin:0 0 12px;color:#58718e;font-size:10px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase
+}
+.testimonials-heading h2{
+  margin:0;color:#102b4e;font-size:clamp(31px,3.6vw,48px);
+  line-height:1.08;letter-spacing:-1.7px;font-weight:650
+}
+.testimonials-heading p{
+  margin:13px auto 0;color:#687b90;font-size:14px;line-height:1.7;max-width:650px
+}
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:20px;
+  align-items:stretch;
+}
+.testimonial-card{
+  position:relative;
+  grid-column:span 2;
+  min-width:0;
+  min-height:224px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  padding:25px 26px 22px;
+  border:1px solid rgba(255,255,255,.98);
+  border-radius:22px;
+  background:linear-gradient(145deg,rgba(255,255,255,.91),rgba(255,255,255,.57));
+  box-shadow:0 14px 38px rgba(24,52,82,.10),inset 0 1px 0 #fff,inset 0 -1px 0 rgba(255,255,255,.55);
+  backdrop-filter:blur(27px) saturate(150%);
+  -webkit-backdrop-filter:blur(27px) saturate(150%);
+  opacity:0;
+  transform:translateY(55px);
+  filter:blur(3px);
+  transition:
+    opacity .9s cubic-bezier(.22,.61,.36,1),
+    transform .9s cubic-bezier(.22,.61,.36,1),
+    box-shadow .45s ease,
+    border-color .45s ease,
+    background .45s ease;
+}
+.testimonial-card:nth-child(1){transition-delay:.05s}
+.testimonial-card:nth-child(2){transition-delay:.12s}
+.testimonial-card:nth-child(3){transition-delay:.19s}
+.testimonial-card:nth-child(4){transition-delay:.27s}
+.testimonial-card:nth-child(5){transition-delay:.34s}
+.testimonial-card:nth-child(6){transition-delay:.41s}
+.testimonial-card:nth-child(7){grid-column:3 / span 2;transition-delay:.50s}
+.client-testimonials.is-visible .testimonial-card{opacity:1;transform:translateY(0);filter:blur(0)}
+.testimonial-card:before{
+  content:"“";position:absolute;z-index:0;right:20px;top:-18px;
+  color:rgba(23,56,95,.055);font-family:Georgia,serif;font-size:118px;font-weight:700;line-height:1;pointer-events:none
+}
+.testimonial-card:after{
+  content:"";position:absolute;inset:-120% -45%;z-index:3;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.52) 48%,rgba(255,255,255,.16) 53%,transparent 63%);
+  transform:translateX(-65%);opacity:0
+}
+.client-testimonials.is-visible .testimonial-card:after{animation:testimonialGlassShimmer 4.8s ease-in-out .55s 1}
+@keyframes testimonialGlassShimmer{
+  0%,20%{transform:translateX(-65%);opacity:0}
+  35%{opacity:1}58%{opacity:1}
+  78%,100%{transform:translateX(65%);opacity:0}
+}
+.testimonial-stars{
+  position:relative;z-index:4;
+  display:inline-flex;align-items:center;gap:3px;
+  width:max-content;margin:0 0 16px;
+  color:#c49a45;font-size:13px;letter-spacing:1px;line-height:1
+}
+.testimonial-stars span{display:inline-block}
+.testimonial-review{
+  position:relative;z-index:4;margin:0;color:#40586e;font-size:12.5px;line-height:1.72;
+  letter-spacing:-.05px;max-width:640px
+}
+.testimonial-footer{
+  position:relative;z-index:4;display:flex;align-items:flex-end;justify-content:space-between;gap:15px;
+  margin-top:auto;padding-top:18px
+}
+.testimonial-client{min-width:0}
+.testimonial-client strong{
+  display:block;color:#17385f;font-size:13px;font-weight:750;line-height:1.3;letter-spacing:-.1px
+}
+.testimonial-client span{
+  display:block;margin-top:5px;color:#7b8da0;font-size:8.5px;font-weight:700;letter-spacing:1.05px;text-transform:uppercase;line-height:1.35
+}
+.testimonial-source{
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;
+  padding:6px 8px;border:1px solid rgba(23,56,95,.08);border-radius:999px;
+  background:rgba(255,255,255,.42);color:#718397;font-size:7.5px;font-weight:700;letter-spacing:.65px;text-transform:uppercase;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9)
+}
+.testimonial-source-dot{width:6px;height:6px;border-radius:50%;background:#c49a45;box-shadow:0 0 0 3px rgba(196,154,69,.10)}
+@media(hover:hover){
+  .testimonial-card:hover{
+    transform:translateY(-7px) scale(1.006);
+    border-color:#fff;
+    background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(255,255,255,.69));
+    box-shadow:0 25px 52px rgba(24,52,82,.15),0 0 25px rgba(255,255,255,.60),inset 0 1px 0 #fff
+  }
+}
+@media(max-width:900px){
+  .testimonials-grid{gap:16px}
+  .testimonial-card{min-height:225px;padding:23px 21px 20px}
+}
+@media(max-width:760px){
+  .client-testimonials{padding:58px 18px 70px}
+  .testimonials-heading{margin-bottom:29px}
+  .testimonials-heading p{font-size:12px}
+  .testimonials-grid{grid-template-columns:1fr;gap:14px}
+  .testimonial-card,.testimonial-card:nth-child(7){grid-column:1;min-height:205px;border-radius:18px;padding:22px 19px 19px}
+  .testimonial-review{font-size:12px;line-height:1.7}
+}
+@media(max-width:520px){
+  .testimonial-card,.testimonial-card:nth-child(7){min-height:214px;padding:20px 17px 17px}
+  .testimonial-stars{margin-bottom:14px;font-size:12px}
+  .testimonial-review{font-size:11.5px}
+  .testimonial-client strong{font-size:12px}
+  .testimonial-client span{font-size:7.5px}
+  .testimonial-source{font-size:7px;padding:5px 7px}
+}
+@media(prefers-reduced-motion:reduce){.testimonial-card{opacity:1;transform:none;filter:none;transition:none}.testimonial-card:after{animation:none!important}}
+
+
+/* CONTACT / ENQUIRY — PREMIUM CONVERSION SECTION */
+.contact-sga{
+  position:relative;isolation:isolate;overflow:hidden;
+  padding:clamp(72px,8vw,116px) clamp(18px,5vw,76px) clamp(78px,8vw,118px);
+  background:
+    radial-gradient(circle at 12% 18%,rgba(255,255,255,.98),rgba(255,255,255,0) 30%),
+    radial-gradient(circle at 88% 82%,rgba(185,208,233,.30),rgba(255,255,255,0) 34%),
+    linear-gradient(145deg,#eef3f7 0%,#e6edf4 48%,#f7f9fb 100%);
+}
+.contact-sga:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.30),transparent 38%,rgba(255,255,255,.22) 78%,transparent)}
+.contact-sga:after{content:"";position:absolute;width:620px;height:620px;right:-250px;top:-300px;border-radius:50%;z-index:-1;pointer-events:none;background:radial-gradient(circle,rgba(255,255,255,.82),rgba(255,255,255,0) 70%)}
+.contact-container{width:100%;max-width:1360px;margin:0 auto}
+.contact-heading{text-align:center;max-width:1320px;margin:0 auto 44px}
+.contact-eyebrow{display:block;margin:0 0 12px;color:#58718e;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
+.contact-heading h2{margin:0;color:#102b4e;font-size:clamp(31px,3.25vw,46px);line-height:1.08;letter-spacing:-1.7px;font-weight:650;white-space:nowrap}
+.contact-point-icon svg{width:17px;height:17px;display:block;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;transform:translateY(.5px)}
+.contact-heading p{margin:13px auto 0;color:#687b90;font-size:14px;line-height:1.7;max-width:650px}
+.contact-stage{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:clamp(24px,4vw,58px);align-items:stretch}
+.contact-intro{position:relative;overflow:hidden;min-height:500px;padding:clamp(31px,4vw,52px);border:1px solid rgba(255,255,255,.96);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.70),rgba(255,255,255,.40));box-shadow:0 24px 65px rgba(30,61,92,.11),inset 0 1px 0 #fff,inset 0 -1px 0 rgba(255,255,255,.55);backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%);display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:translateY(55px);filter:blur(3px);transition:opacity .95s cubic-bezier(.22,.61,.36,1),transform .95s cubic-bezier(.22,.61,.36,1),filter .95s ease}
+.contact-form-card{position:relative;overflow:hidden;min-height:500px;padding:clamp(26px,3.4vw,42px);border:1px solid rgba(255,255,255,.98);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.91),rgba(255,255,255,.58));box-shadow:0 24px 65px rgba(30,61,92,.13),inset 0 1px 0 #fff,inset 0 -1px 0 rgba(255,255,255,.55);backdrop-filter:blur(28px) saturate(155%);-webkit-backdrop-filter:blur(28px) saturate(155%);opacity:0;transform:translateY(55px);filter:blur(3px);transition:opacity .95s cubic-bezier(.22,.61,.36,1),transform .95s cubic-bezier(.22,.61,.36,1),filter .95s ease .08s}
+.contact-sga.is-visible .contact-intro,.contact-sga.is-visible .contact-form-card{opacity:1;transform:translateY(0);filter:blur(0)}
+.contact-intro:before,.contact-form-card:before{content:"";position:absolute;inset:-120% -45%;z-index:0;pointer-events:none;background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.48) 48%,rgba(255,255,255,.13) 53%,transparent 63%);transform:translateX(-65%);opacity:0}
+.contact-sga.is-visible .contact-intro:before{animation:contactGlassSweep 5.2s ease-in-out .55s 1}
+.contact-sga.is-visible .contact-form-card:before{animation:contactGlassSweep 5.2s ease-in-out .75s 1}
+@keyframes contactGlassSweep{0%,20%{transform:translateX(-65%);opacity:0}35%{opacity:1}58%{opacity:1}78%,100%{transform:translateX(65%);opacity:0}}
+.contact-intro > *,.contact-form-card > *{position:relative;z-index:2}
+.contact-kicker{margin:0 0 14px;color:#6a8198;font-size:10px;font-weight:750;letter-spacing:2px;text-transform:uppercase}
+.contact-intro h3{margin:0;max-width:590px;color:#102b4e;font-size:clamp(31px,3.3vw,46px);line-height:1.04;letter-spacing:-1.7px;font-weight:650}
+.contact-intro-copy{margin:17px 0 0;max-width:540px;color:#66788d;font-size:13px;line-height:1.75}
+.contact-points{display:grid;gap:13px;margin-top:30px}
+.contact-point{display:flex;align-items:center;gap:13px;color:#3e566c;font-size:11px;line-height:1.45}
+.contact-point-icon{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.98);border-radius:11px;background:rgba(255,255,255,.62);box-shadow:0 7px 18px rgba(30,61,92,.08),inset 0 1px 0 #fff;color:#17385f;font-size:14px}
+.contact-point strong{display:block;color:#17385f;font-size:11px;font-weight:750}
+.contact-point span{display:block;margin-top:2px;color:#7a8da1;font-size:10px}
+.contact-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:max-content;min-height:45px;margin-top:28px;padding:0 19px;border:1px solid #17385f;border-radius:999px;background:#17385f;color:#fff;font-size:11px;font-weight:700;letter-spacing:.15px;box-shadow:0 9px 24px rgba(23,56,95,.15);transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
+.contact-whatsapp span{font-size:16px;transition:transform .25s ease}
+.contact-whatsapp:hover{background:#0e2847;transform:translateY(-2px);box-shadow:0 13px 28px rgba(23,56,95,.19)}
+.contact-whatsapp:hover span{transform:translateX(3px)}
+.contact-form-title{margin:0;color:#17385f;font-size:22px;font-weight:700;letter-spacing:-.45px}
+.contact-form-subtitle{margin:7px 0 25px;color:#7a8da1;font-size:11px;line-height:1.6}
+.enquiry-form{display:grid;gap:14px}
+.enquiry-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-field{display:grid;gap:7px}
+.form-field label{color:#5f7489;font-size:9px;font-weight:750;letter-spacing:1px;text-transform:uppercase}
+.form-field input,.form-field select,.form-field textarea{width:100%;border:1px solid rgba(23,56,95,.10);border-radius:13px;background:rgba(255,255,255,.58);color:#17385f;outline:none;font:inherit;font-size:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.95);transition:border-color .2s ease,box-shadow .2s ease,background .2s ease}
+.form-field input,.form-field select{height:45px;padding:0 13px}
+.form-field textarea{min-height:105px;padding:12px 13px;resize:vertical;line-height:1.55}
+.form-field input::placeholder,.form-field textarea::placeholder{color:#9aa9b7}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:rgba(23,56,95,.28);background:rgba(255,255,255,.82);box-shadow:0 0 0 3px rgba(87,113,142,.08),inset 0 1px 0 #fff}
+.enquiry-actions{display:flex;align-items:center;gap:13px;margin-top:3px}
+.enquiry-submit{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:47px;padding:0 22px;border:1px solid #17385f;border-radius:999px;background:#17385f;color:#fff;font-size:11px;font-weight:750;cursor:pointer;box-shadow:0 9px 24px rgba(23,56,95,.14);transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+.enquiry-submit span{font-size:16px;transition:transform .2s ease}.enquiry-submit:hover{background:#0e2847;transform:translateY(-2px);box-shadow:0 13px 28px rgba(23,56,95,.19)}.enquiry-submit:hover span{transform:translateX(3px)}
+.enquiry-note{margin:0;color:#8a99a8;font-size:8.5px;line-height:1.5}
+.contact-success{display:none;margin-top:12px;padding:10px 12px;border:1px solid rgba(23,56,95,.08);border-radius:11px;background:rgba(255,255,255,.48);color:#58718e;font-size:10px;line-height:1.5}
+.contact-success.is-visible{display:block}
+@media(max-width:900px){.contact-heading h2{white-space:normal}.contact-stage{grid-template-columns:1fr}.contact-intro,.contact-form-card{min-height:auto}.contact-intro{gap:24px}.contact-points{margin-top:25px}}
+@media(max-width:600px){.contact-sga{padding:58px 18px 72px}.contact-heading{margin-bottom:29px}.contact-heading p{font-size:12px}.contact-intro,.contact-form-card{padding:27px 21px;border-radius:20px}.contact-intro h3{font-size:32px}.contact-intro-copy{font-size:12px}.contact-point{font-size:10px}.enquiry-row{grid-template-columns:1fr}.enquiry-actions{align-items:flex-start;flex-direction:column}.enquiry-submit{width:100%}.contact-whatsapp{width:100%}}
+@media(prefers-reduced-motion:reduce){.contact-intro,.contact-form-card{opacity:1;transform:none;filter:none;transition:none}.contact-intro:before,.contact-form-card:before{animation:none!important}}
+
+
+/* RESPONSIVE */
+@media(max-width:1050px){.properties-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.property-card-body{padding:13px 11px 12px}.property-card-footer{margin-top:12px}.property-builder{width:74px}.property-options{gap:5px}.price-option-value{font-size:12px}}
+@media(max-width:900px){.header-inner{min-height:72px;padding-inline:20px;gap:14px}.desktop-nav{display:none;position:absolute;top:calc(100% + 8px);left:16px;right:16px;padding:18px;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.95);border-radius:18px;box-shadow:var(--shadow);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);flex-direction:column;align-items:stretch;gap:0}.desktop-nav.is-open{display:flex}.desktop-nav a{padding:13px 5px;font-size:14px}.header-cta{margin-left:auto;min-height:40px;padding-inline:14px}.menu-toggle{display:inline-grid;place-items:center}.hero{min-height:calc(100svh - 72px)}.hero-image{object-position:57% center}.hero-eyebrow{margin-bottom:13px;letter-spacing:.16em}.hero-title{font-size:clamp(2.45rem,10vw,4.7rem);letter-spacing:-.06em}.hero-title span{padding:.16em .18em .21em}.scroll-cue{bottom:24px;gap:9px}.scroll-label{font-size:8px;letter-spacing:.18em}.scroll-mouse{display:none}.scroll-chevron{display:block}.channel-partners{padding:62px 5%}.partners-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 26px}}
+@media(max-width:760px){.featured-properties{padding:58px 18px 68px}.properties-heading{margin-bottom:28px}.properties-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.property-card{border-radius:15px}.property-card-body{padding:13px}.property-title{font-size:14px}.property-type{font-size:11px}.price-option-label{font-size:9px}.price-option-value{font-size:12px}.property-builder{width:78px}}
+@media(max-width:520px){.brand{gap:0}.brand-mark{width:48px;height:37px;flex-basis:48px;border-radius:10px;overflow:visible}.brand-mark img{width:68px;height:68px;transform:scale(1.16)}.header-cta{font-size:11px;padding-inline:11px}.menu-toggle{width:38px;height:38px}.hero-content{width:calc(100% - 24px)}.channel-partners{padding:48px 20px 54px}.partners-heading{margin-bottom:28px}.partners-eyebrow{font-size:9px;letter-spacing:1.8px}.partners-heading h2{font-size:27px;letter-spacing:-.7px}.partners-heading p{max-width:270px;margin:10px auto 0;font-size:12px}.partners-logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 18px}.partner-logo{min-height:65px;padding:5px}.partner-logo img{max-width:135px;height:50px}}
+@media(max-width:380px){.properties-grid{gap:12px}.property-card-body{padding:10px}.property-location{font-size:8px;letter-spacing:.6px}.property-title{font-size:12px}.property-type{font-size:10px}.price-option-label{font-size:8px}.price-option-value{font-size:10px}.property-builder{width:62px}.property-card-footer{gap:5px}}
+
+@media(max-width:1050px){
+  .why-sga-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+}
+@media(max-width:760px){
+  .why-sga{padding:58px 18px 68px}
+  .why-sga-heading{margin-bottom:28px}
+  .why-sga-heading p{font-size:12px}
+  .why-sga-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .why-sga-card{min-height:210px;padding:22px 17px 20px;border-radius:17px}
+  .why-sga-icon{width:42px;height:42px;margin-bottom:18px;border-radius:12px}
+  .why-sga-icon svg{width:19px;height:19px}
+  .why-sga-card h3{font-size:15px}
+  .why-sga-card p{font-size:11px;line-height:1.6}
+}
+@media(max-width:380px){
+  .why-sga{padding-inline:14px}
+  .why-sga-grid{gap:11px}
+  .why-sga-card{min-height:205px;padding:19px 13px 18px}
+  .why-sga-card h3{font-size:13px}
+  .why-sga-card p{font-size:10px}
+}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.hero-title,.hero-eyebrow{opacity:1;transform:none}.scroll-cue{opacity:1;animation:none}.scroll-wheel,.scroll-chevron{animation:none}.partner-logo{opacity:1;transform:none}.partner-logo img{transition:none}.property-card{animation:none!important;transition:none}.property-image-wrap img,.explore-projects,.explore-projects span{transition:none}}
+
+/* FINAL CTA + PREMIUM FOOTER */
+ .final-cta{position:relative;isolation:isolate;overflow:hidden;padding:64px clamp(18px,5vw,76px);background:#dce4eb url('hero.webp') center 48%/cover no-repeat;color:#fff}
+.final-cta:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(105deg,rgba(9,25,39,.82) 0%,rgba(24,45,61,.68) 38%,rgba(112,93,61,.38) 68%,rgba(255,193,79,.34) 100%)}
+.final-cta:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(255,255,255,.13),rgba(255,255,255,.035) 42%,rgba(255,255,255,.10) 72%,rgba(255,255,255,.03));backdrop-filter:saturate(115%)}
+.final-cta-inner{width:100%;max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:38px}
+.final-cta-copy{min-width:0;position:relative}
+.final-cta-eyebrow{display:block;margin:0 0 9px;color:rgba(255,255,255,.72);font-size:9px;font-weight:750;letter-spacing:2.3px;text-transform:uppercase}
+.final-cta h2{margin:0;color:#fff;font-size:clamp(28px,3.2vw,43px);line-height:1.05;letter-spacing:-1.5px;font-weight:650;text-shadow:0 2px 18px rgba(0,0,0,.12)}
+.final-cta p{margin:10px 0 0;color:rgba(255,255,255,.72);font-size:12px;line-height:1.65}
+.final-cta-actions{display:flex;align-items:center;gap:12px;flex:0 0 auto;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.final-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 20px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.1px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.final-cta-btn.primary{border:1px solid rgba(255,255,255,.62);background:linear-gradient(135deg,rgba(23,56,95,.94),rgba(13,43,75,.86));color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.34),0 10px 26px rgba(7,22,35,.22);backdrop-filter:blur(14px) saturate(135%);-webkit-backdrop-filter:blur(14px) saturate(135%)}
+.final-cta-btn.secondary{border:1px solid rgba(255,255,255,.58);background:linear-gradient(135deg,#2bd46f,#20bd5c);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 10px 26px rgba(12,110,55,.24)}
+.final-cta-btn.secondary svg{display:block;width:18px;height:18px;flex:0 0 18px;fill:currentColor}
+.final-cta-btn:hover{transform:translateY(-2px)}
+.final-cta-btn.primary:hover{background:#102f52;box-shadow:0 14px 30px rgba(10,35,60,.30)}
+.final-cta-btn.secondary:hover{background:linear-gradient(135deg,#25c866,#18ad50);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 13px 30px rgba(12,110,55,.30)}
+.final-cta-btn span{font-size:15px}
+.site-footer{position:relative;isolation:isolate;overflow:hidden;background:#0d2233;color:#fff;padding:62px clamp(18px,5vw,76px) 22px}
+.site-footer:before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(90deg,rgba(9,29,44,.98) 0%,rgba(12,34,51,.98) 62%,rgba(12,34,51,.98) 100%)}
+.site-footer:after{content:"";position:absolute;right:-100px;bottom:-170px;width:620px;height:620px;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(214,164,75,.09),rgba(214,164,75,0) 67%);pointer-events:none}
+.footer-inner{width:100%;max-width:1360px;margin:0 auto}
+.footer-main{display:grid;grid-template-columns:1.45fr .8fr .9fr 1.15fr;gap:42px;padding-bottom:52px}
+.footer-brand{max-width:330px}
+.footer-brand-mark{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;margin-bottom:17px;border:1px solid rgba(255,255,255,.16);border-radius:13px;background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 8px 24px rgba(0,0,0,.10)}
+.footer-brand h3{margin:0;color:#fff;font-size:20px;font-weight:650;letter-spacing:-.5px}
+.footer-brand p{margin:11px 0 0;color:rgba(255,255,255,.62);font-size:11px;line-height:1.75;max-width:300px}
+.footer-label{margin:0 0 15px;color:rgba(255,255,255,.44);font-size:8px;font-weight:750;letter-spacing:1.8px;text-transform:uppercase}
+.footer-links{display:grid;gap:9px}
+.footer-links a{width:max-content;max-width:100%;color:rgba(255,255,255,.72);font-size:11px;transition:color .2s ease,transform .2s ease}
+.footer-links a:hover{color:#fff;transform:translateX(2px)}
+.footer-contact{display:grid;gap:12px}
+.footer-contact-item{display:grid;gap:4px;padding-left:42px;position:relative}
+.footer-contact-item:before{content:"";position:absolute;left:0;top:0;width:30px;height:30px;border:1px solid rgba(255,255,255,.14);border-radius:10px;background:rgba(255,255,255,.06);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.footer-contact-item:after{content:"";position:absolute;left:9px;top:9px;width:12px;height:12px;border:1.4px solid rgba(255,255,255,.76);border-radius:50%}
+.footer-contact-item:nth-child(3):after{border-radius:2px;width:12px;height:9px;top:10px}
+.footer-contact-item strong{color:#fff;font-size:11px;font-weight:650}
+.footer-contact-item span,.footer-contact-item a{color:rgba(255,255,255,.60);font-size:10px;line-height:1.55}
+.footer-contact-item a:hover{color:#fff}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:20px;border-top:1px solid rgba(255,255,255,.10)}
+.footer-copy{margin:0;color:rgba(255,255,255,.42);font-size:9px;line-height:1.5}
+.footer-bottom-right{display:flex;align-items:center;gap:18px}
+.footer-legal{display:flex;align-items:center;gap:12px}
+.footer-legal a{color:rgba(255,255,255,.45);font-size:9px;transition:color .2s ease}.footer-legal a:hover{color:#fff}
+.footer-socials{display:flex;align-items:center;gap:7px}
+.footer-social{display:grid;place-items:center;width:30px;height:30px;border:1px solid rgba(255,255,255,.14);border-radius:50%;color:rgba(255,255,255,.70);background:rgba(255,255,255,.035);font-size:11px;font-weight:700;transition:transform .2s ease,color .2s ease,background .2s ease,border-color .2s ease}
+.footer-social:hover{transform:translateY(-2px);color:#fff;background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.24)}
+.footer-social svg{width:14px;height:14px;display:block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:900px){
+  .final-cta-inner{align-items:flex-start;flex-direction:column}
+  .final-cta-actions{width:100%}
+  .final-cta-btn{flex:1}
+  .footer-main{grid-template-columns:1.2fr 1fr 1fr;gap:34px}
+  .footer-brand{grid-column:1/-1;max-width:520px}
+}
+@media(max-width:620px){
+  .final-cta{padding:42px 18px 48px}
+  .final-cta h2{font-size:27px}
+  .final-cta p{font-size:11px}
+  .final-cta-actions{width:100%;flex-direction:column;align-items:stretch;gap:13px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .final-cta-btn{width:100%;min-height:58px;flex:0 0 auto;font-size:13px}
+  .final-cta-btn.primary,.final-cta-btn.secondary{border-radius:999px}
+  .final-cta-btn.secondary svg{width:20px;height:20px;flex-basis:20px}
+  .site-footer{padding:52px 18px 20px}
+  .footer-main{grid-template-columns:1fr 1fr;gap:31px 24px;padding-bottom:38px}
+  .footer-brand{grid-column:1/-1}
+  .footer-contact{grid-column:1/-1}
+  .footer-bottom{align-items:flex-start;flex-direction:column;gap:15px}
+  .footer-bottom-right{width:100%;justify-content:space-between;flex-wrap:wrap}
+}
+@media(max-width:400px){
+  .footer-main{grid-template-columns:1fr}
+  .footer-brand,.footer-contact{grid-column:auto}
+  .footer-bottom-right{align-items:flex-start;flex-direction:column}
+}
+
+
+
+/* ==========================================================
+   SGA WHITE + GOLD THEME — POPPINS / REGULAR & MEDIUM
+   Theme tokens: white, charcoal grey, champagne gold
+   ========================================================== */
+:root{
+  --ink:#4A4A4A;
+  --ink-soft:#595959;
+  --gold:#B08D45;
+  --gold-deep:#987536;
+  --gold-light:#D8C28F;
+  --gold-line:#E9DFC9;
+  --gold-wash:#FBF8F1;
+  --paper:#FFFFFF;
+  --shadow:0 12px 30px rgba(74,74,74,.07);
+}
+
+html,body{background:#FFFFFF!important;color:#4A4A4A!important}
+body,*{font-family:'Poppins',sans-serif!important}
+body{font-weight:400!important;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+input,select,textarea,button{font-family:'Poppins',sans-serif!important;font-weight:400!important}
+
+/* Typography: regular body copy, medium headings and controls */
+h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif!important;font-weight:500!important;color:#4A4A4A!important;letter-spacing:-.035em}
+p,li,label,small{font-family:'Poppins',sans-serif!important;font-weight:400!important;color:#595959!important}
+strong,b{font-weight:500!important;color:#4A4A4A!important}
+.desktop-nav a,.header-cta,.menu-toggle,.service-item,.explore-projects,
+.contact-whatsapp,.enquiry-submit,.final-cta-btn,.footer-links a,
+.footer-legal a,.footer-social{font-family:'Poppins',sans-serif!important;font-weight:500!important}
+
+/* Consistent solid-white page surfaces */
+.site-header,.channel-partners,.featured-properties,.why-sga,.services-sga,
+.about-sga,.client-testimonials,.contact-sga,.site-footer{
+  background:#FFFFFF!important;
+}
+.site-header{border-bottom:1px solid #EEE8DC!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.featured-properties:before,.featured-properties:after,
+.why-sga:before,.why-sga:after,
+.services-sga:before,.about-sga:before,.about-sga:after,
+.client-testimonials:before,.client-testimonials:after,
+.contact-sga:before,.contact-sga:after,.site-footer:before,.site-footer:after{
+  background:none!important;opacity:0!important;
+}
+
+/* Standard text palette */
+.desktop-nav a,.header-cta,.properties-heading h2,.why-sga-heading h2,
+.services-heading h2,.about-heading h2,.team-heading h2,
+.testimonials-heading h2,.contact-heading h2,.contact-intro h3,
+.contact-form-title,.property-title,.property-type,.why-sga-card h3,
+.service-name,.founder-copy h3,.team-info h3,.testimonial-client strong{
+  color:#4A4A4A!important;
+}
+.properties-heading p,.why-sga-heading p,.services-heading p,
+.about-heading p,.team-heading p,.testimonials-heading p,
+.contact-heading p,.contact-intro-copy,.founder-copy p,
+.testimonial-review,.property-location,.price-option-label,
+.property-type,.team-info p,.contact-form-subtitle,.form-field label{
+  color:#595959!important;
+}
+.properties-eyebrow,.why-sga-eyebrow,.services-eyebrow,
+.about-eyebrow,.team-eyebrow,.testimonials-eyebrow,.contact-eyebrow,
+.founder-kicker,.contact-kicker,.final-cta-eyebrow{
+  color:var(--gold)!important;font-weight:500!important;letter-spacing:.16em!important;
+}
+
+/* Clean white cards — no translucent blue glass */
+.property-card,.why-sga-card,.services-menu,.founder-card,.team-card,
+.testimonial-card,.contact-intro,.contact-form-card{
+  background:#FFFFFF!important;
+  border:1px solid var(--gold-line)!important;
+  box-shadow:0 10px 28px rgba(74,74,74,.055),0 1px 3px rgba(176,141,69,.05)!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+}
+.property-card:after,.why-sga-card:after,.team-card:after,
+.testimonial-card:after,.contact-intro:before,.contact-form-card:before{
+  background:none!important;box-shadow:none!important;animation:none!important;opacity:0!important;
+}
+.property-card:before,.why-sga-card:before,.team-card:before{
+  animation:none!important;opacity:0!important;
+}
+.property-card:hover,.why-sga-card:hover,.team-card:hover,.testimonial-card:hover{
+  border-color:var(--gold-light)!important;
+  background:#FFFFFF!important;
+  box-shadow:0 16px 34px rgba(74,74,74,.09)!important;
+}
+.property-card-body{background:#FFFFFF!important}
+.property-card-footer{border-top:1px solid #EEE8DC!important}
+.property-location,.price-option-label{color:#77716A!important}
+.price-option-value{color:var(--gold-deep)!important;font-weight:500!important}
+.property-status{background:#FFFFFF!important;border:1px solid var(--gold-line)!important;color:var(--gold-deep)!important;backdrop-filter:none!important}
+.property-card-arrow{color:var(--gold-deep)!important;border-color:var(--gold-line)!important;background:#FFFFFF!important}
+.property-card:hover .property-card-arrow{background:var(--gold)!important;color:#FFFFFF!important}
+
+/* Gold details and controls */
+.header-cta{border:1px solid var(--gold)!important;background:#FFFFFF!important;color:#4A4A4A!important}
+.header-cta:hover{background:var(--gold)!important;color:#FFFFFF!important}
+.menu-toggle{border:1px solid var(--gold-line)!important;background:#FFFFFF!important;color:#4A4A4A!important}
+.explore-projects,.enquiry-submit,.contact-whatsapp{
+  border:1px solid var(--gold)!important;background:var(--gold)!important;color:#FFFFFF!important;
+  box-shadow:0 7px 18px rgba(176,141,69,.17)!important;
+}
+.explore-projects:hover,.enquiry-submit:hover,.contact-whatsapp:hover{
+  background:var(--gold-deep)!important;color:#FFFFFF!important;
+  box-shadow:0 10px 22px rgba(176,141,69,.22)!important;
+}
+.why-sga-icon,.service-arrow,.contact-point-icon{
+  color:var(--gold-deep)!important;border-color:var(--gold-line)!important;background:var(--gold-wash)!important;
+  box-shadow:none!important;
+}
+.service-item{color:#595959!important;border-bottom-color:#EEE8DC!important}
+.service-item.is-active,.service-item:hover{color:var(--gold-deep)!important}
+.service-item.is-active:after{border-color:var(--gold-light)!important;background:var(--gold-wash)!important}
+.service-number,.service-item.is-active .service-number{color:var(--gold)!important}
+.service-item.is-active .service-arrow{background:#FFFFFF!important;color:var(--gold-deep)!important;box-shadow:none!important}
+.service-progress-fill{background:var(--gold-light)!important}
+.service-progress-line{background:rgba(255,255,255,.5)!important}
+.testimonial-stars{color:var(--gold)!important}
+.testimonial-source{background:var(--gold-wash)!important;border-color:var(--gold-line)!important;color:#77716A!important}
+.testimonial-source-dot{background:var(--gold)!important;box-shadow:none!important}
+
+/* Contact form: crisp white, gold focus and outlines */
+.form-field input,.form-field select,.form-field textarea{
+  background:#FFFFFF!important;color:#4A4A4A!important;border:1px solid #E5DED1!important;
+  box-shadow:none!important;
+}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{
+  border-color:var(--gold)!important;box-shadow:0 0 0 3px rgba(176,141,69,.10)!important;
+}
+.form-field input::placeholder,.form-field textarea::placeholder{color:#9A948A!important}
+.contact-success{background:var(--gold-wash)!important;border-color:var(--gold-line)!important;color:#595959!important}
+
+/* Final CTA and footer follow the same white + gold identity */
+.final-cta{background:#FFFFFF!important;color:#4A4A4A!important;border-top:1px solid #EEE8DC!important;border-bottom:1px solid #EEE8DC!important}
+.final-cta:before,.final-cta:after{background:none!important;backdrop-filter:none!important}
+.final-cta-eyebrow{color:var(--gold)!important}
+.final-cta h2{color:#4A4A4A!important;text-shadow:none!important}
+.final-cta p{color:#595959!important}
+.final-cta-btn.primary{
+  border:1px solid var(--gold)!important;background:var(--gold)!important;color:#FFFFFF!important;
+  box-shadow:0 8px 18px rgba(176,141,69,.18)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+}
+.final-cta-btn.primary:hover{background:var(--gold-deep)!important;box-shadow:0 11px 24px rgba(176,141,69,.22)!important}
+/* Keep WhatsApp's recognizable green as a functional brand cue */
+.final-cta-btn.secondary{border:1px solid #20BD5C!important;background:#20BD5C!important;color:#FFFFFF!important;box-shadow:0 8px 18px rgba(32,189,92,.14)!important}
+.final-cta-btn.secondary:hover{background:#18A94F!important}
+.site-footer{color:#595959!important;border-top:1px solid #EEE8DC!important}
+.footer-brand-mark{background:var(--gold-wash)!important;border:1px solid var(--gold-line)!important;color:var(--gold-deep)!important;box-shadow:none!important}
+.footer-brand h3,.footer-contact-item strong{color:#4A4A4A!important}
+.footer-brand p,.footer-label,.footer-links a,.footer-contact-item span,
+.footer-contact-item a,.footer-copy,.footer-legal a,.footer-social{color:#595959!important}
+.footer-label{font-weight:500!important}
+.footer-links a:hover,.footer-contact-item a:hover,.footer-legal a:hover{color:var(--gold-deep)!important}
+.footer-contact-item:before{border-color:var(--gold-line)!important;background:var(--gold-wash)!important;box-shadow:none!important}
+.footer-contact-item:after{border-color:var(--gold)!important}
+.footer-bottom{border-top:1px solid #EEE8DC!important}
+.footer-social{border-color:var(--gold-line)!important;background:#FFFFFF!important}
+.footer-social:hover{color:var(--gold-deep)!important;background:var(--gold-wash)!important;border-color:var(--gold-light)!important}
+
+/* Keep the photographic hero legible, with gold only as a subtle accent */
+.hero-eyebrow,.hero-title{color:#FFFFFF!important}
+.hero-title span{border-color:rgba(255,255,255,.55)!important}
+.scroll-cue{color:#FFFFFF!important}
+
+/* Typography weights stay within regular / medium */
+.hero-eyebrow,.properties-eyebrow,.why-sga-eyebrow,.services-eyebrow,
+.about-eyebrow,.team-eyebrow,.testimonials-eyebrow,.contact-eyebrow,
+.founder-kicker,.contact-kicker,.footer-label,.form-field label{
+  font-weight:500!important;
+}
+.property-title,.price-option-value,.why-sga-card h3,.service-name,
+.founder-name,.team-info h3,.testimonial-client strong,
+.contact-form-title,.footer-brand h3,.footer-contact-item strong{
+  font-weight:500!important;
+}
+.header-cta,.explore-projects,.contact-whatsapp,.enquiry-submit,.final-cta-btn,
+.desktop-nav a,.service-item{font-weight:500!important}
+
+@media(max-width:600px){
+  .final-cta{padding:52px 18px!important}
+  .final-cta-actions{gap:10px!important}
+  .final-cta-btn{font-size:12px!important}
+}
+
+
+/* HEADER TYPE REFINEMENT — approx. 15% larger with a slightly stronger weight */
+.desktop-nav a{
+  font-size:13.8px!important;
+  font-weight:600!important;
+  color:#4A4A4A!important;
+}
+.header-cta{
+  font-size:13.8px!important;
+  font-weight:600!important;
+}
+@media(max-width:900px){
+  .desktop-nav a{font-size:16.1px!important;font-weight:600!important}
+  .header-cta{font-size:13.8px!important;font-weight:600!important}
+}
+@media(max-width:520px){
+  .header-cta{font-size:12.7px!important;font-weight:600!important}
+}
+
+
+/* FOUNDER STORY — clearer, more readable editorial copy */
+.founder-story{gap:11px!important}
+.founder-story p{
+  margin:0!important;
+  max-width:640px!important;
+  color:#595959!important;
+  font-family:'Poppins',sans-serif!important;
+  font-size:14px!important;
+  font-weight:400!important;
+  line-height:1.82!important;
+  letter-spacing:0!important;
+}
+@media(max-width:800px){
+  .founder-story{gap:12px!important}
+  .founder-story p{font-size:13.2px!important;line-height:1.82!important}
+}
+
+
+
+/* FOUNDER STORY — clearer hierarchy and breathing room */
+.founder-copy{
+  justify-content:flex-start!important;
+}
+.founder-copy h3{
+  margin:0!important;
+  line-height:1.12!important;
+}
+.founder-story{
+  display:grid!important;
+  margin-top:20px!important;
+  gap:15px!important;
+}
+.founder-story p{
+  margin:0!important;
+  max-width:640px!important;
+  color:#595959!important;
+  font-family:'Poppins',sans-serif!important;
+  font-size:14px!important;
+  font-weight:400!important;
+  line-height:1.85!important;
+  letter-spacing:0!important;
+}
+.founder-meta{
+  margin-top:26px!important;
+  padding-top:18px!important;
+}
+
+/* CONTACT DETAILS — consistent, refined gold line icons */
+.contact-points{gap:17px!important;margin-top:32px!important}
+.contact-point{gap:15px!important;align-items:center!important;line-height:1.5!important}
+.contact-point-icon{
+  width:42px!important;height:42px!important;flex:0 0 42px!important;
+  display:grid!important;place-items:center!important;
+  border:1px solid #E9DFC9!important;border-radius:13px!important;
+  background:#FBF8F1!important;color:#987536!important;
+  box-shadow:0 5px 14px rgba(176,141,69,.09)!important;
+}
+.contact-point-icon svg{
+  width:20px!important;height:20px!important;display:block!important;
+  fill:none!important;stroke:currentColor!important;stroke-width:1.7!important;
+  stroke-linecap:round!important;stroke-linejoin:round!important;
+}
+.contact-point strong{font-size:12px!important;font-weight:500!important;color:#4A4A4A!important}
+.contact-point span{font-size:11px!important;color:#77716A!important;line-height:1.45!important}
+
+@media(max-width:800px){
+  .founder-story{margin-top:17px!important;gap:13px!important}
+  .founder-story p{font-size:13.2px!important;line-height:1.82!important}
+  .founder-meta{margin-top:23px!important;padding-top:16px!important}
+  .contact-points{gap:15px!important;margin-top:26px!important}
+  .contact-point-icon{width:40px!important;height:40px!important;flex-basis:40px!important}
+}
+
+</style>
+</head>
+<body id="top">
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="#home" aria-label="Shri Govardhan Associates home"><span class="brand-mark">
+  <img src="sga-logo.webp" alt="Shri Govardhan Associates">
+</span></a>
+<nav class="desktop-nav" id="primary-navigation" aria-label="Primary navigation"><a href="#home">Home</a><a href="#properties">Properties</a><a href="#about">About us</a><a href="#contact">Contact</a></nav>
+<a class="header-cta" href="#contact">Enquire now <span aria-hidden="true">&nbsp;↗</span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+</div></header>
+<main>
+<section class="hero" id="home" aria-label="Shri Govardhan Associates real estate"><img class="hero-image" src="hero.webp" alt="Contemporary luxury residential architecture" fetchpriority="high"><div class="hero-content"><div class="hero-copy"><p class="hero-eyebrow">Your real estate partner in Faridabad</p><h1 class="hero-title"><span>Buy. Sell. Invest.</span></h1></div></div><a class="scroll-cue" href="#properties" aria-label="Scroll to explore featured properties"><span class="scroll-label">SCROLL TO EXPLORE</span><span class="scroll-mouse" aria-hidden="true"><span class="scroll-wheel"></span></span><span class="scroll-chevron" aria-hidden="true"></span></a></section>
+<section class="featured-properties" id="properties" aria-labelledby="properties-heading"><div class="properties-container">
+<div class="properties-heading"><span class="properties-eyebrow">CURATED PROPERTY COLLECTION</span><h2 id="properties-heading">Featured Properties</h2><p>Explore handpicked properties for living and investment.</p></div>
+<div class="properties-grid">
+<!-- 01: Replace image filename if your uploaded image uses a different name. -->
+<article class="property-card"><div class="property-image-wrap"><img src="property-01.webp" alt="Puri Luxuria Floors project" loading="lazy"><span class="property-status">For Sale</span></div><div class="property-card-body"><p class="property-location">Sector 89 · Greater Faridabad</p><h3 class="property-title">Puri Luxuria Floors</h3><p class="property-type"><strong>Floors</strong> in Sector 89, Faridabad</p><div class="property-options"><div class="price-option"><p class="price-option-label">Floors</p><p class="price-option-value">₹2.5 Cr</p></div><div class="price-option"><p class="price-option-label">Floors</p><p class="price-option-value">₹3.3 Cr</p></div><div class="price-option"><p class="price-option-label">Floors</p><p class="price-option-value">₹3.3 Cr</p></div></div><div class="property-card-footer"><span class="property-builder"><img src="puri.webp" alt="Puri Constructions" loading="lazy"></span><span class="property-card-arrow" aria-hidden="true">↗</span></div></div></article>
+<article class="property-card"><div class="property-image-wrap"><img src="property-02.webp" alt="BPTP District 4 project" loading="lazy"><span class="property-status">For Sale</span></div><div class="property-card-body"><p class="property-location">Sector 84 · Greater Faridabad</p><h3 class="property-title">BPTP District 4</h3><p class="property-type"><strong>Residential Plot</strong> in Sector 84, Faridabad</p><div class="property-options"><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹2.1 Cr</p></div><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹2.3 Cr</p></div><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹2.4 Cr</p></div></div><div class="property-card-footer"><span class="property-builder"><img src="bptp.webp" alt="BPTP" loading="lazy"></span><span class="property-card-arrow" aria-hidden="true">↗</span></div></div></article>
+<article class="property-card"><div class="property-image-wrap"><img src="property-03.webp" alt="Adore Happy Homes Exclusive project" loading="lazy"><span class="property-status">For Sale</span></div><div class="property-card-body"><p class="property-location">Sector 86 · Faridabad</p><h3 class="property-title">Adore Happy Homes Exclusive</h3><p class="property-type"><strong>3 BHK Apartment</strong> in Sector 86, Faridabad</p><div class="property-options options-two"><div class="price-option"><p class="price-option-label">3 BHK + 2 Toilets</p><p class="price-option-value">₹66.4 L</p></div><div class="price-option"><p class="price-option-label">3 BHK + 2 Toilets</p><p class="price-option-value">₹70 L</p></div></div><div class="property-card-footer"><span class="property-builder"><img src="adore.webp" alt="Adore" loading="lazy"></span><span class="property-card-arrow" aria-hidden="true">↗</span></div></div></article>
+<article class="property-card"><div class="property-image-wrap"><img src="property-04.webp" alt="Omaxe Heights project" loading="lazy"><span class="property-status">For Sale</span></div><div class="property-card-body"><p class="property-location">Sector 86 · Faridabad</p><h3 class="property-title">Omaxe Heights</h3><p class="property-type"><strong>2, 3 &amp; 4 BHK Apartment</strong> in Sector 86</p><div class="property-options"><div class="price-option"><p class="price-option-label">2 BHK</p><p class="price-option-value">₹1.1 Cr</p></div><div class="price-option"><p class="price-option-label">3 BHK + Servant</p><p class="price-option-value">₹1.1 Cr</p></div><div class="price-option"><p class="price-option-label">3 BHK</p><p class="price-option-value">₹1.5 Cr</p></div></div><div class="property-card-footer"><span class="property-builder"><img src="omaxe.webp" alt="Omaxe" loading="lazy"></span><span class="property-card-arrow" aria-hidden="true">↗</span></div></div></article>
+<article class="property-card"><div class="property-image-wrap"><img src="property-05.webp" alt="Amolik Concordia Living project" loading="lazy"><span class="property-status">For Sale</span></div><div class="property-card-body"><p class="property-location">Sector 97 · Faridabad Bypass Road</p><h3 class="property-title">Amolik Concordia Living</h3><p class="property-type"><strong>Residential Plot</strong> in Sector 97, Faridabad</p><div class="property-options"><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹2.4 Cr</p></div><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹2.4 Cr</p></div><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹2.5 Cr</p></div></div><div class="property-card-footer"><span class="property-builder"><img src="amolik.webp" alt="Amolik" loading="lazy"></span><span class="property-card-arrow" aria-hidden="true">↗</span></div></div></article>
+<article class="property-card"><div class="property-image-wrap"><img src="property-06.webp" alt="Neoliv Golf One project" loading="lazy"><span class="property-status">For Sale</span></div><div class="property-card-body"><p class="property-location">Sector 98 &amp; 99A · Greater Faridabad</p><h3 class="property-title">Neoliv Golf One</h3><p class="property-type"><strong>Residential Plot</strong> in Sector 98 &amp; 99A</p><div class="property-options"><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹2.9 Cr</p></div><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹3.0 Cr</p></div><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹3.0 Cr</p></div></div><div class="property-card-footer"><span class="property-builder"><img src="neoliv.webp" alt="Neoliv" loading="lazy"></span><span class="property-card-arrow" aria-hidden="true">↗</span></div></div></article>
+<article class="property-card"><div class="property-image-wrap"><img src="property-07.webp" alt="BPTP SkyNest Towers project" loading="lazy"><span class="property-status">For Sale</span></div><div class="property-card-body"><p class="property-location">Sector 80 · Greater Faridabad</p><h3 class="property-title">BPTP SkyNest Towers</h3><p class="property-type"><strong>3 &amp; 4 BHK Apartment</strong> in Sector 80</p><div class="property-options options-two"><div class="price-option"><p class="price-option-label">3 BHK</p><p class="price-option-value">₹4.5 Cr</p></div><div class="price-option"><p class="price-option-label">4 BHK</p><p class="price-option-value">₹5.4 Cr</p></div></div><div class="property-card-footer"><span class="property-builder"><img src="bptp.webp" alt="BPTP" loading="lazy"></span><span class="property-card-arrow" aria-hidden="true">↗</span></div></div></article>
+<article class="property-card"><div class="property-image-wrap"><img src="property-08.webp" alt="BPTP WA VANA project" loading="lazy"><span class="property-status">For Sale</span></div><div class="property-card-body"><p class="property-location">Sector 80 · Greater Faridabad</p><h3 class="property-title">BPTP WA VANA</h3><p class="property-type"><strong>Residential Plot</strong> in Sector 80, Greater Faridabad</p><div class="property-options"><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹5.8 Cr</p></div><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹6.5 Cr</p></div><div class="price-option"><p class="price-option-label">Residential Plot</p><p class="price-option-value">₹7.0 Cr</p></div></div><div class="property-card-footer"><span class="property-builder"><img src="bptp.webp" alt="BPTP" loading="lazy"></span><span class="property-card-arrow" aria-hidden="true">↗</span></div></div></article>
+</div><div class="properties-actions"><a class="explore-projects" href="projects.html">Explore More Projects <span aria-hidden="true">→</span></a></div>
+</div></section>
+<section class="channel-partners" id="channel-partners"><div class="partners-container"><div class="partners-heading"><span class="partners-eyebrow">TRUSTED DEVELOPER NETWORK</span><h2>Our Channel Partners</h2><p>Established names. Better property choices.</p></div><div class="partners-logos">
+<div class="partner-logo"><img src="bptp.webp" alt="BPTP" loading="lazy"></div><div class="partner-logo"><img src="amolik.webp" alt="Amolik" loading="lazy"></div><div class="partner-logo"><img src="omaxe.webp" alt="Omaxe" loading="lazy"></div><div class="partner-logo"><img src="rps.webp" alt="RPS" loading="lazy"></div><div class="partner-logo"><img src="adore.webp" alt="Adore" loading="lazy"></div><div class="partner-logo"><img src="puri.webp" alt="Puri" loading="lazy"></div>
+</div></div></section>
+<section class="services-sga" id="services" aria-labelledby="services-heading">
+  <div class="services-container">
+    <div class="services-heading">
+      <span class="services-eyebrow">HOW WE HELP</span>
+      <h2 id="services-heading">Property decisions, made simpler.</h2>
+      <p>From discovery to investment, we help you move with confidence.</p>
+    </div>
+
+    <div class="services-stage">
+      <div class="services-menu" role="tablist" aria-label="Our services">
+        <button class="service-item is-active" type="button" role="tab" aria-selected="true" data-service="buy">
+          <span class="service-number">01</span><span class="service-name">Buy</span><span class="service-arrow">↗</span>
+        </button>
+        <button class="service-item" type="button" role="tab" aria-selected="false" data-service="sell">
+          <span class="service-number">02</span><span class="service-name">Sell</span><span class="service-arrow">↗</span>
+        </button>
+        <button class="service-item" type="button" role="tab" aria-selected="false" data-service="rent">
+          <span class="service-number">03</span><span class="service-name">Rent</span><span class="service-arrow">↗</span>
+        </button>
+        <button class="service-item" type="button" role="tab" aria-selected="false" data-service="invest">
+          <span class="service-number">04</span><span class="service-name">Invest</span><span class="service-arrow">↗</span>
+        </button>
+      </div>
+
+      <div class="services-visual" aria-live="polite">
+        <img class="service-image is-active" data-image="buy" src="service-buy.webp" alt="Premium residential apartment" loading="lazy">
+        <img class="service-image" data-image="sell" src="service-sell.webp" alt="Premium residential floor" loading="lazy">
+        <img class="service-image" data-image="rent" src="service-rent.webp" alt="Modern apartment property" loading="lazy">
+        <img class="service-image" data-image="invest" src="service-invest.webp" alt="Residential investment plot" loading="lazy">
+        <!-- Image slots are intentionally empty until you upload service-buy.webp, service-sell.webp, service-rent.webp and service-invest.webp alongside this HTML file. Recommended: 2000 x 1000 px. -->
+
+        <div class="service-progress"><span id="service-current">01</span><span class="service-progress-line"><span class="service-progress-fill" id="service-progress-fill"></span></span><span>04</span></div>
+
+        <div class="service-visual-copy">
+          <span class="service-tag" id="service-tag">BUY PROPERTY</span>
+          <h3 id="service-title">Find a place that feels right.</h3>
+          <p id="service-description">Handpicked homes, plots and apartments matched to your needs, location and budget.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="why-sga" id="why-sga" aria-labelledby="why-sga-heading">
+  <div class="why-sga-container">
+    <div class="why-sga-heading">
+      <span class="why-sga-eyebrow">THE SGA DIFFERENCE</span>
+      <h2 id="why-sga-heading">Why Choose SGA</h2>
+      <p>A better way to discover the right property, with trusted guidance at every step.</p>
+    </div>
+    <div class="why-sga-grid">
+      <article class="why-sga-card">
+        <div class="why-sga-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5"/><path d="M6.5 10.5V19h11v-8.5"/><path d="M9.5 19v-5h5v5"/></svg></div>
+        <h3>Curated Properties</h3>
+        <p>Handpicked homes and investments selected around location, quality and long-term value.</p>
+      </article>
+      <article class="why-sga-card">
+        <div class="why-sga-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M8 20v-6h8v6"/><path d="M9 9h.01M15 9h.01"/></svg></div>
+        <h3>Trusted Developer Network</h3>
+        <p>Access to established developers and carefully selected projects across key locations.</p>
+      </article>
+      <article class="why-sga-card">
+        <div class="why-sga-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19 10 13l4 3 6-8"/><path d="M16 8h4v4"/><path d="M5 5h6"/></svg></div>
+        <h3>Local Market Expertise</h3>
+        <p>Deep understanding of Faridabad and Greater Faridabad's evolving property landscape.</p>
+      </article>
+      <article class="why-sga-card">
+        <div class="why-sga-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h10"/><path d="M4 12h16"/><path d="M4 17h10"/><path d="m17 5 3 2-3 2"/><path d="m7 15-3 2 3 2"/></svg></div>
+        <h3>End-to-End Assistance</h3>
+        <p>Guidance from property selection through documentation and transaction support.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="about-sga" id="about" aria-labelledby="about-sga-heading">
+  <div class="about-container">
+    <div class="about-heading">
+      <span class="about-eyebrow">ABOUT SHRI GOVARDHAN ASSOCIATES</span>
+      <h2 id="about-sga-heading">Built on Trust. Growing Through Real Estate.</h2>
+      <p>A real-estate consultancy focused on trusted relationships, local market understanding and thoughtful property guidance.</p>
+    </div>
+
+    <article class="founder-card">
+      <div class="founder-copy">
+        <p class="founder-kicker">THE STORY BEHIND SGA</p>
+        <h3>Real estate is not just about property. It's about people.</h3>
+        <div class="founder-story">
+          <p>Established in 2006, Shri Govardhan Associates is built on a simple belief: every property decision deserves trust, thoughtful guidance and a clear understanding of the local market. We approach real estate as a people-first service, taking the time to understand each client's requirements, priorities and plans.</p>
+          <p>Led by Amit Singhal, Founder &amp; Director, SGA works with buyers, sellers and investors across Faridabad and Greater Faridabad. With a focus on carefully selected properties and established developer relationships, we help clients explore residential and investment opportunities with greater clarity and confidence.</p>
+          <p>From the first conversation to evaluating the options ahead, our aim is to make each step feel informed, personal and straightforward. We value long-term relationships and believe that the right property journey begins by listening carefully — because real estate is not just about property; it's about people.</p>
+        </div>
+        <div class="founder-meta">
+          <div>
+            <p class="founder-name">Amit Singhal</p>
+            <p class="founder-role">Founder &amp; Director</p>
+          </div>
+          <div class="founder-est">
+            <strong>EST. 2006</strong>
+          </div>
+        </div>
+      </div>
+      <div class="founder-photo">
+        <img src="amit-singhal.webp" alt="Amit Singhal — Founder &amp; Director, Shri Govardhan Associates" loading="lazy">
+      </div>
+    </article>
+
+    <div class="team-heading">
+      <span class="team-eyebrow">THE PEOPLE BEHIND SGA</span>
+      <h2>Meet Our Team</h2>
+      <p>The people who turn property requirements into the right opportunities.</p>
+    </div>
+
+    <div class="team-carousel" aria-label="SGA team members"><div class="team-grid">
+      <article class="team-card"><div class="team-photo"><img src="mahesh-singh.webp" alt="Mahesh Singh — Senior Sales Consultant" loading="lazy"></div><div class="team-info"><h3>Mahesh Singh</h3><p>Senior Sales Consultant</p></div></article>
+      <article class="team-card"><div class="team-photo"><img src="virender-g-goyal.webp" alt="Virender G. Goyal — Senior Sales Consultant" loading="lazy"></div><div class="team-info"><h3>Virender G. Goyal</h3><p>Senior Sales Consultant</p></div></article>
+      <article class="team-card"><div class="team-photo"><img src="sagar-rajput.webp" alt="Sagar Rajput — Senior Sales Consultant" loading="lazy"></div><div class="team-info"><h3>Sagar Rajput</h3><p>Senior Sales Consultant</p></div></article>
+      <article class="team-card"><div class="team-photo"><img src="rohit.webp" alt="Rohit — Senior Sales Consultant" loading="lazy"></div><div class="team-info"><h3>Rohit</h3><p>Senior Sales Consultant</p></div></article>
+      <article class="team-card"><div class="team-photo"><img src="soniya-sharma.webp" alt="Soniya Sharma — Senior Sales Consultant" loading="lazy"></div><div class="team-info"><h3>Soniya Sharma</h3><p>Senior Sales Consultant</p></div></article>
+      <article class="team-card"><div class="team-photo"><img src="vikas-kumar.webp" alt="Vikas Kumar — Sales Consultant" loading="lazy"></div><div class="team-info"><h3>Vikas Kumar</h3><p>Sales Consultant</p></div></article>
+      <article class="team-card"><div class="team-photo"><img src="harish-kaushik.webp" alt="Harish Kaushik — Sales Consultant" loading="lazy"></div><div class="team-info"><h3>Harish Kaushik</h3><p>Sales Consultant</p></div></article>
+      <article class="team-card"><div class="team-photo"><img src="himanshu.webp" alt="Himanshu — Sales Consultant" loading="lazy"></div><div class="team-info"><h3>Himanshu</h3><p>Sales Consultant</p></div></article>
+      <article class="team-card"><div class="team-photo"><img src="naresh-bhardwaj.webp" alt="Naresh Bhardwaj — Sales Consultant" loading="lazy"></div><div class="team-info"><h3>Naresh Bhardwaj</h3><p>Sales Consultant</p></div></article>
+    </div></div>
+  </div>
+</section>
+<section class="client-testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="testimonials-container">
+    <div class="testimonials-heading">
+      <span class="testimonials-eyebrow">CLIENT STORIES</span>
+      <h2 id="testimonials-heading">Trusted by People. Built on Relationships.</h2>
+      <p>Real experiences shared by clients who trusted Shri Govardhan Associates with their property decisions.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="testimonial-review">“We had a very good experience with Mr Amit Singhal. Good behaviour, very professional.”</p>
+        <div class="testimonial-footer"><div class="testimonial-client"><strong>Saurabh Dhamija</strong><span>Google Review · 5★</span></div><span class="testimonial-source"><i class="testimonial-source-dot"></i>Google</span></div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="testimonial-review">“Owner has very kind nature and staff are also very well mannered. According to me they are the best property dealer in Faridabad.”</p>
+        <div class="testimonial-footer"><div class="testimonial-client"><strong>Vanshika Pandey</strong><span>Google Review · 5★</span></div><span class="testimonial-source"><i class="testimonial-source-dot"></i>Google</span></div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="testimonial-review">“Best experience. Staff is very good and they have a large inventory of builder floors in Faridabad. Best property dealer in Greater Faridabad.”</p>
+        <div class="testimonial-footer"><div class="testimonial-client"><strong>Raj Pawar</strong><span>Google Review · 5★</span></div><span class="testimonial-source"><i class="testimonial-source-dot"></i>Google</span></div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="testimonial-review">“I had purchased a plot from Shri Govardhan Associates &amp; experienced a very smooth &amp; trustworthy transaction.”</p>
+        <div class="testimonial-footer"><div class="testimonial-client"><strong>Anil Khanna</strong><span>Google Review · 5★</span></div><span class="testimonial-source"><i class="testimonial-source-dot"></i>Google</span></div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="testimonial-review">“I recently completed my plot sale through Mr. Amit Singhal. Amit is very knowledgeable, professional, and transparent in his dealing. The entire transaction was smooth.”</p>
+        <div class="testimonial-footer"><div class="testimonial-client"><strong>P Mann</strong><span>Google Review · 5★</span></div><span class="testimonial-source"><i class="testimonial-source-dot"></i>Google</span></div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="testimonial-review">“Had an amazing experience dealing with them. Very professional and trustworthy. Amit ji went above and beyond to help me as an NRI to sell my property. Very knowledgeable and helpful.”</p>
+        <div class="testimonial-footer"><div class="testimonial-client"><strong>Sapna Sharma</strong><span>Google Review · 5★</span></div><span class="testimonial-source"><i class="testimonial-source-dot"></i>Google</span></div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="testimonial-review">“Amit Ji was professional, transparent and extremely supportive throughout. He patiently guided us through property visits and paperwork, and his knowledge of the market and legal formalities made the experience smooth and stress-free.”</p>
+        <div class="testimonial-footer"><div class="testimonial-client"><strong>Meenakshi Aggarwal</strong><span>Google Review · 5★</span></div><span class="testimonial-source"><i class="testimonial-source-dot"></i>Google</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="contact-sga" id="contact" aria-labelledby="contact-heading">
+  <div class="contact-container">
+    <div class="contact-heading">
+      <span class="contact-eyebrow">LET'S TALK PROPERTY</span>
+      <h2 id="contact-heading">Your Next Property Is Just a Conversation Away.</h2>
+      <p>Whether you're looking to buy, sell, rent or invest, our team is here to help you move forward with clarity and confidence.</p>
+    </div>
+
+    <div class="contact-stage">
+      <article class="contact-intro">
+        <div>
+          <p class="contact-kicker">START A CONVERSATION</p>
+          <h3>Let's find the right property for you.</h3>
+          <p class="contact-intro-copy">Tell us what you're looking for and the SGA team will help you explore the right opportunities across Faridabad and Greater Faridabad.</p>
+
+          <div class="contact-points">
+            <div class="contact-point"><span class="contact-point-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><strong>Visit / Meet Us</strong><span>M-03, Sector 83, Faridabad</span></div></div>
+            <div class="contact-point"><span class="contact-point-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span><div><strong>Email</strong><span>Info@shrigovardhan.com</span></div></div>
+            <div class="contact-point"><span class="contact-point-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></span><div><strong>What we help with</strong><span>Buy · Sell · Rent · Invest</span></div></div>
+          </div>
+        </div>
+        <a class="contact-whatsapp" href="https://wa.me/?text=Hello%20Shri%20Govardhan%20Associates%2C%20I%20would%20like%20to%20discuss%20a%20property%20requirement." target="_blank" rel="noopener">Start on WhatsApp <span>↗</span></a>
+      </article>
+
+      <article class="contact-form-card">
+        <h3 class="contact-form-title">Get in Touch</h3>
+        <p class="contact-form-subtitle">Share a few details and we'll help you take the next step.</p>
+        <form class="enquiry-form" id="sga-enquiry-form">
+          <div class="enquiry-row">
+            <div class="form-field"><label for="enquiry-name">Your Name</label><input id="enquiry-name" name="name" type="text" placeholder="Enter your name" autocomplete="name" required></div>
+            <div class="form-field"><label for="enquiry-phone">Phone Number</label><input id="enquiry-phone" name="phone" type="tel" placeholder="Enter phone number" autocomplete="tel" required></div>
+          </div>
+          <div class="enquiry-row">
+            <div class="form-field"><label for="enquiry-interest">I'm interested in</label><select id="enquiry-interest" name="interest" required><option value="" selected disabled>Select one</option><option>Buy</option><option>Sell</option><option>Rent</option><option>Invest</option></select></div>
+            <div class="form-field"><label for="enquiry-location">Preferred Location</label><input id="enquiry-location" name="location" type="text" placeholder="e.g. Faridabad Sector 85"></div>
+          </div>
+          <div class="form-field"><label for="enquiry-message">Message</label><textarea id="enquiry-message" name="message" placeholder="Tell us what you're looking for..."></textarea></div>
+          <div class="enquiry-actions"><button class="enquiry-submit" type="submit">Send Enquiry <span>↗</span></button><p class="enquiry-note">Your enquiry will open your email app with the details pre-filled.</p></div>
+          <div class="contact-success" id="contact-success" role="status">Your enquiry is ready. Please send the pre-filled email to SGA.</div>
+        </form>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="final-cta" aria-labelledby="final-cta-heading">
+  <div class="final-cta-inner">
+    <div class="final-cta-copy">
+      <span class="final-cta-eyebrow">READY WHEN YOU ARE</span>
+      <h2 id="final-cta-heading">Let's find your next property.</h2>
+      <p>Thoughtful guidance for your next move across Faridabad &amp; Greater Faridabad.</p>
+    </div>
+    <div class="final-cta-actions">
+      <a class="final-cta-btn primary" href="#featured-properties">Explore Properties <span>↗</span></a>
+      <a class="final-cta-btn secondary" href="https://wa.me/?text=Hello%20Shri%20Govardhan%20Associates%2C%20I%20would%20like%20to%20discuss%20a%20property%20requirement." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2.1a9.78 9.78 0 0 0-8.39 14.8L2.3 21.9l5.12-1.34a9.8 9.8 0 1 0 4.62-18.46Zm0 17.8a8 8 0 0 1-4.08-1.12l-.29-.17-3.04.8.81-2.96-.19-.3a8.02 8.02 0 1 1 6.79 3.75Zm4.4-6.01c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <span class="footer-brand-mark">SGA</span>
+        <h3>Shri Govardhan Associates</h3>
+        <p>Trusted property guidance across Faridabad and Greater Faridabad — helping buyers, sellers, renters and investors move with greater clarity and confidence.</p>
+      </div>
+
+      <div>
+        <p class="footer-label">Quick Links</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#top">Home</a>
+          <a href="#properties">Properties</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="footer-label">Services</p>
+        <nav class="footer-links" aria-label="Footer services">
+          <a href="#services">Buy</a>
+          <a href="#services">Sell</a>
+          <a href="#services">Rent</a>
+          <a href="#services">Invest</a>
+        </nav>
+      </div>
+
+      <div class="footer-contact">
+        <p class="footer-label">Contact</p>
+        <div class="footer-contact-item"><strong>Visit / Meet Us</strong><span>M-03, Sector 83, Faridabad</span></div>
+        <div class="footer-contact-item"><strong>Email</strong><a href="mailto:Info@shrigovardhan.com">Info@shrigovardhan.com</a></div>
+        <div class="footer-contact-item"><strong>Website</strong><a href="#top">www.shrigovardhan.com</a></div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2006–2026 Shri Govardhan Associates. All rights reserved.</p>
+      <div class="footer-bottom-right">
+        <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+        <div class="footer-socials" aria-label="Social links">
+          <a class="footer-social" href="#" aria-label="Instagram">IG</a>
+          <a class="footer-social" href="#" aria-label="Facebook">f</a>
+          <a class="footer-social" href="mailto:Info@shrigovardhan.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4.5 7 7.5 6 7.5-6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</main>
+<script>
+document.querySelectorAll('.service-image').forEach(img=>{img.addEventListener('error',()=>img.classList.add('is-missing'));img.addEventListener('load',()=>img.classList.remove('is-missing'));if(img.complete&&!img.naturalWidth)img.classList.add('is-missing')});
+const menuButton=document.querySelector('.menu-toggle');
+const navigation=document.querySelector('#primary-navigation');
+menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')!=='true';menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');menuButton.textContent=open?'×':'☰';navigation.classList.toggle('is-open',open)});
+navigation.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navigation.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');menuButton.textContent='☰'}));
+const partnersSection=document.querySelector('.channel-partners');
+if('IntersectionObserver'in window&&partnersSection){const partnersObserver=new IntersectionObserver((entries,observer)=>{entries.forEach(entry=>{if(entry.isIntersecting){partnersSection.classList.add('is-visible');observer.unobserve(partnersSection)}})},{threshold:.18});partnersObserver.observe(partnersSection)}else if(partnersSection){partnersSection.classList.add('is-visible')}
+
+const whySgaSection=document.querySelector('.why-sga');
+if('IntersectionObserver'in window&&whySgaSection){
+  const whySgaObserver=new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        whySgaSection.classList.add('is-visible');
+        observer.unobserve(whySgaSection);
+      }
+    });
+  },{threshold:.18});
+  whySgaObserver.observe(whySgaSection);
+}else if(whySgaSection){
+  whySgaSection.classList.add('is-visible');
+}
+
+
+/* OUR SERVICES INTERACTION */
+const serviceItems=document.querySelectorAll('.service-item');
+const serviceImages=document.querySelectorAll('.service-image');
+const serviceCurrent=document.querySelector('#service-current');
+const serviceProgressFill=document.querySelector('#service-progress-fill');
+const serviceTag=document.querySelector('#service-tag');
+const serviceTitle=document.querySelector('#service-title');
+const serviceDescription=document.querySelector('#service-description');
+
+const serviceContent={
+  buy:{number:'01',tag:'BUY PROPERTY',title:'Find a place that feels right.',description:'Handpicked homes, plots and apartments matched to your needs, location and budget.'},
+  sell:{number:'02',tag:'SELL PROPERTY',title:'Sell with confidence.',description:'Position your property for the right audience with focused local market guidance.'},
+  rent:{number:'03',tag:'RENT PROPERTY',title:'Find the right space.',description:'Explore quality rental options with practical guidance from search to selection.'},
+  invest:{number:'04',tag:'INVEST SMARTER',title:'Invest with clarity.',description:'Discover property opportunities through location-led thinking and long-term value.'}
+};
+
+function setService(key){
+  const data=serviceContent[key];
+  if(!data)return;
+  serviceItems.forEach(item=>{
+    const active=item.dataset.service===key;
+    item.classList.toggle('is-active',active);
+    item.setAttribute('aria-selected',String(active));
+  });
+  serviceImages.forEach(img=>img.classList.toggle('is-active',img.dataset.image===key));
+  serviceCurrent.textContent=data.number;
+  serviceProgressFill.style.width=`${Number(data.number)*25}%`;
+  serviceTag.textContent=data.tag;
+  serviceTitle.textContent=data.title;
+  serviceDescription.textContent=data.description;
+}
+
+serviceItems.forEach(item=>{
+  item.addEventListener('mouseenter',()=>setService(item.dataset.service));
+  item.addEventListener('focus',()=>setService(item.dataset.service));
+  item.addEventListener('click',()=>setService(item.dataset.service));
+});
+
+
+/* TEAM CAROUSEL — four cards visible, one card slides every 1 second */
+const teamCarousel=document.querySelector('.team-carousel');
+const teamTrack=document.querySelector('.team-grid');
+
+if(teamCarousel&&teamTrack){
+  const originalTeamCards=Array.from(teamTrack.children);
+  const teamCount=originalTeamCards.length;
+
+  originalTeamCards.slice(0,4).forEach(card=>{
+    const clone=card.cloneNode(true);
+    clone.setAttribute('aria-hidden','true');
+    clone.querySelectorAll('img').forEach(img=>img.setAttribute('aria-hidden','true'));
+    teamTrack.appendChild(clone);
+  });
+
+  let teamIndex=0;
+  let teamTimer=null;
+  let teamAnimating=false;
+  let pointerStartX=0;
+  let pointerStartY=0;
+  let pointerDragging=false;
+
+  function teamStep(){
+    const first=teamTrack.querySelector('.team-card');
+    if(!first)return 0;
+    const styles=getComputedStyle(teamTrack);
+    const gap=parseFloat(styles.columnGap||styles.gap)||0;
+    return first.getBoundingClientRect().width+gap;
+  }
+
+  function teamMove(animate=true){
+    teamTrack.style.transition=animate?'transform .82s cubic-bezier(.22,.61,.36,1)':'none';
+    teamTrack.style.transform=`translate3d(${-teamIndex*teamStep()}px,0,0)`;
+  }
+
+  function teamNext(){
+    if(teamAnimating)return;
+    teamAnimating=true;
+    teamIndex++;
+    teamMove(true);
+  }
+
+  teamTrack.addEventListener('transitionend',event=>{
+    if(event.propertyName!=='transform')return;
+    teamAnimating=false;
+    if(teamIndex>=teamCount){
+      teamIndex=0;
+      teamMove(false);
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{teamTrack.style.transition='transform .82s cubic-bezier(.22,.61,.36,1)'}));
+    }
+  });
+
+  function startTeamAuto(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    clearInterval(teamTimer);
+    teamTimer=setInterval(teamNext,1500);
+  }
+
+  function stopTeamAuto(){clearInterval(teamTimer)}
+
+  teamCarousel.addEventListener('mouseenter',stopTeamAuto);
+  teamCarousel.addEventListener('mouseleave',startTeamAuto);
+  teamCarousel.addEventListener('focusin',stopTeamAuto);
+  teamCarousel.addEventListener('focusout',startTeamAuto);
+
+  teamCarousel.addEventListener('pointerdown',event=>{
+    if(event.pointerType==='mouse'&&event.button!==0)return;
+    pointerStartX=event.clientX;
+    pointerStartY=event.clientY;
+    pointerDragging=true;
+    teamCarousel.classList.add('is-dragging');
+    stopTeamAuto();
+  });
+
+  teamCarousel.addEventListener('pointerup',event=>{
+    if(!pointerDragging)return;
+    pointerDragging=false;
+    teamCarousel.classList.remove('is-dragging');
+    const dx=event.clientX-pointerStartX;
+    const dy=event.clientY-pointerStartY;
+    if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){
+      if(dx<0)teamNext();
+      else if(!teamAnimating&&teamIndex>0){teamIndex--;teamMove(true)}
+    }
+    startTeamAuto();
+  });
+
+  teamCarousel.addEventListener('pointercancel',()=>{
+    pointerDragging=false;
+    teamCarousel.classList.remove('is-dragging');
+    startTeamAuto();
+  });
+
+  window.addEventListener('resize',()=>{
+    teamMove(false);
+  });
+
+  teamMove(false);
+  startTeamAuto();
+}
+
+/* ABOUT SGA reveal + missing-photo handling */
+document.querySelectorAll('.founder-photo img,.team-photo img').forEach(img=>{
+  img.addEventListener('error',()=>img.classList.add('is-missing'));
+  img.addEventListener('load',()=>img.classList.remove('is-missing'));
+  if(img.complete&&!img.naturalWidth)img.classList.add('is-missing');
+});
+const aboutSection=document.querySelector('.about-sga');
+if(aboutSection){
+  const aboutObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){aboutSection.classList.add('is-visible');aboutObserver.unobserve(aboutSection);}});
+  },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+  aboutObserver.observe(aboutSection);
+}
+
+
+
+/* CLIENT TESTIMONIALS REVEAL */
+const testimonialsSection=document.querySelector('.client-testimonials');
+if(testimonialsSection){
+  if('IntersectionObserver' in window){
+    const testimonialsObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          testimonialsSection.classList.add('is-visible');
+          testimonialsObserver.unobserve(testimonialsSection);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -7% 0px'});
+    testimonialsObserver.observe(testimonialsSection);
+  }else{
+    testimonialsSection.classList.add('is-visible');
+  }
+}
+
+
+
+/* CONTACT SECTION REVEAL + ENQUIRY */
+const contactSection=document.querySelector('.contact-sga');
+if(contactSection){
+  if('IntersectionObserver' in window){
+    const contactObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          contactSection.classList.add('is-visible');
+          contactObserver.unobserve(contactSection);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -7% 0px'});
+    contactObserver.observe(contactSection);
+  }else{contactSection.classList.add('is-visible');}
+}
+const enquiryForm=document.querySelector('#sga-enquiry-form');
+if(enquiryForm){
+  enquiryForm.addEventListener('submit',event=>{
+    event.preventDefault();
+    const data=new FormData(enquiryForm);
+    const name=(data.get('name')||'').trim();
+    const phone=(data.get('phone')||'').trim();
+    const interest=(data.get('interest')||'').trim();
+    const location=(data.get('location')||'').trim();
+    const message=(data.get('message')||'').trim();
+    const subject=encodeURIComponent(`SGA Property Enquiry — ${interest || 'Property Requirement'}`);
+    const body=encodeURIComponent(`Hello Shri Govardhan Associates,\n\nName: ${name}\nPhone: ${phone}\nInterested in: ${interest}\nPreferred Location: ${location || 'Not specified'}\nMessage: ${message || 'Not specified'}\n\nSent from the SGA website.`);
+    window.location.href=`mailto:Info@shrigovardhan.com?subject=${subject}&body=${body}`;
+    document.querySelector('#contact-success')?.classList.add('is-visible');
+  });
+}
+
+</script>
+</body>
+</html>
