@@ -1584,6 +1584,159 @@ strong,b{font-weight:500!important;color:#4A4A4A!important}
 }
 </style>
 
+
+<style id="about-director-refinement-v7">
+/* V7 refinement: put the architectural inset behind the founder portrait */
+.about-director-section .director-visual{
+  isolation:isolate!important;
+  overflow:visible!important;
+}
+.about-director-section .director-photo-main{
+  z-index:2!important;
+  right:14%!important;
+  width:70%!important;
+  height:565px!important;
+}
+.about-director-section .director-photo-detail{
+  z-index:1!important;
+  right:-1%!important;
+  bottom:7px!important;
+  width:52%!important;
+  height:245px!important;
+  transform:translateY(10px)!important;
+  border:1px solid #e6dbc6!important;
+  padding:8px!important;
+  background:#fff!important;
+  box-shadow:0 16px 38px rgba(52,44,31,.13)!important;
+}
+.about-director-section .director-est-stamp{z-index:4!important}
+
+/* A distinct, warm transition between the director story and property collection */
+.about-director-section{
+  padding-bottom:clamp(66px,6.5vw,94px)!important;
+  background:#fff!important;
+}
+.director-section-break{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:17px;
+  min-height:76px;
+  padding:17px 24px;
+  background:linear-gradient(90deg,#f2ecdf 0%,#fbf8f1 50%,#f2ecdf 100%);
+  border-top:1px solid #e8ddc8;
+  border-bottom:1px solid #e8ddc8;
+}
+.director-section-break-line{
+  display:block;
+  width:clamp(34px,8vw,112px);
+  height:1px;
+  background:linear-gradient(90deg,transparent,#c6aa70);
+}
+.director-section-break-line:last-child{
+  background:linear-gradient(90deg,#c6aa70,transparent);
+}
+.director-section-break-mark{
+  display:grid;
+  place-items:center;
+  flex:0 0 31px;
+  width:31px;
+  height:31px;
+  border:1px solid #c9ae78;
+  border-radius:50%;
+  color:#98783a;
+  background:rgba(255,255,255,.72);
+  font-family:Georgia,serif!important;
+  font-size:9px;
+  letter-spacing:.04em;
+}
+.director-section-break-caption{
+  color:#8e7547!important;
+  font-family:'Poppins',sans-serif!important;
+  font-size:9px!important;
+  font-weight:600!important;
+  letter-spacing:.19em!important;
+  line-height:1.5;
+  text-align:center;
+}
+.featured-properties{
+  background:#fbf9f4!important;
+  border-top:0!important;
+  padding-top:clamp(72px,7.5vw,104px)!important;
+}
+.featured-properties:before{
+  content:""!important;
+  position:absolute!important;
+  top:0!important;
+  left:50%!important;
+  right:auto!important;
+  width:86px!important;
+  height:2px!important;
+  border-radius:0 0 3px 3px!important;
+  transform:translateX(-50%)!important;
+  background:#b89550!important;
+  filter:none!important;
+  opacity:1!important;
+  pointer-events:none!important;
+}
+
+@media(max-width:1120px) and (min-width:821px){
+  .about-director-section .director-photo-main{
+    right:14%!important;width:70%!important;height:515px!important;
+  }
+  .about-director-section .director-photo-detail{
+    right:-1%!important;width:51%!important;height:210px!important;bottom:8px!important;
+  }
+}
+@media(max-width:820px){
+  .about-director-section .director-photo-main{
+    right:13%!important;width:71%!important;height:500px!important;
+  }
+  .about-director-section .director-photo-detail{
+    right:-1%!important;width:51%!important;height:210px!important;bottom:5px!important;
+  }
+  .director-section-break{min-height:70px;gap:12px;padding:15px 18px}
+  .director-section-break-line{width:clamp(24px,7vw,64px)}
+  .director-section-break-caption{font-size:8px!important;letter-spacing:.14em!important}
+}
+@media(max-width:560px){
+  .about-director-section .director-photo-main{
+    right:12%!important;width:75%!important;height:375px!important;
+  }
+  .about-director-section .director-photo-detail{
+    right:-1%!important;width:55%!important;height:155px!important;bottom:-2px!important;
+    padding:6px!important;
+  }
+  .director-section-break{min-height:64px;gap:9px;padding:13px 10px}
+  .director-section-break-mark{flex-basis:27px;width:27px;height:27px;font-size:8px}
+  .director-section-break-line{width:20px;flex:0 0 20px}
+  .director-section-break-caption{font-size:7px!important;letter-spacing:.11em!important}
+  .featured-properties{padding-top:62px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .about-director-section .director-photo-detail{transform:none!important}
+}
+</style>
+
+
+
+<style id="about-director-clean-photo-v8">
+/* V8: clean founder imagery without text overlays or monogram badge */
+.about-director-section .director-photo-main:after{display:none!important}
+.about-director-section .director-photo-caption,
+.about-director-section .director-photo-detail figcaption,
+.about-director-section .director-est-stamp{display:none!important}
+.director-section-break{gap:clamp(16px,2vw,26px)!important}
+.director-section-break-caption{white-space:normal}
+@media(max-width:560px){
+  .director-section-break{gap:10px!important}
+  .director-section-break-line{width:clamp(18px,6vw,28px)!important;flex:0 1 clamp(18px,6vw,28px)!important}
+  .director-section-break-caption{font-size:7px!important;letter-spacing:.10em!important}
+}
+</style>
+
 </head>
 <body id="top">
 <header class="site-header">
@@ -1730,21 +1883,20 @@ strong,b{font-weight:500!important;color:#4A4A4A!important}
         <div class="director-visual-frame" aria-hidden="true"></div>
         <figure class="director-photo-main">
           <img src="amit-singhal.webp" alt="Amit Singhal, Founder and Director of Shri Govardhan Associates" loading="lazy">
-          <figcaption class="director-photo-caption">
-            <span>THE PEOPLE BEHIND THE PROPERTY JOURNEY</span>
-            <strong>Amit Singhal</strong>
-            <small>Founder &amp; Director</small>
-          </figcaption>
         </figure>
         <figure class="director-photo-detail">
           <img src="property-01.webp" alt="Residential property architecture from the SGA property collection" loading="lazy">
-          <figcaption>PROPERTY. PEOPLE. PERSPECTIVE.</figcaption>
         </figure>
-        <div class="director-est-stamp"><span>SGA</span><strong>EST. 2006</strong></div>
       </div>
     </div>
   </div>
 </section>
+
+<div class="director-section-break" aria-hidden="true">
+  <span class="director-section-break-line"></span>
+  <span class="director-section-break-caption">TRUSTED GUIDANCE. SELECTED PROPERTIES.</span>
+  <span class="director-section-break-line"></span>
+</div>
 
 <section class="featured-properties" id="properties" aria-labelledby="properties-heading"><div class="properties-container">
 <div class="properties-heading"><span class="properties-eyebrow">CURATED PROPERTY COLLECTION</span><h2 id="properties-heading">Featured Properties</h2><p>Explore handpicked properties for living and investment.</p></div>
