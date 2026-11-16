@@ -1320,6 +1320,77 @@ strong,b{font-weight:500!important;color:#4A4A4A!important}
 @media(prefers-reduced-motion:reduce){.hero-title .hero-rotating-word{transition:none!important}.scroll-wheel,.scroll-chevron{animation:none!important}}
 </style>
 
+
+<style>
+/* SGA refinement V4: warm champagne identity, custom search experience */
+:root{--sga-gold:#b4934d;--sga-gold-dark:#947536;--sga-gold-line:#e9dfca;--sga-ink:#37332c}
+/* Recolour the existing blue logo artwork to a single warm champagne-gold tone. */
+.brand-mark img{filter:brightness(0) saturate(100%) invert(61%) sepia(25%) saturate(710%) hue-rotate(7deg) brightness(91%) contrast(88%)!important}
+.site-header{background:#fff!important;border-bottom:1px solid #eee8dc!important}
+.header-phone svg{stroke:var(--sga-gold)!important}
+.header-phone:hover,.desktop-nav a:hover{color:var(--sga-gold-dark)!important}
+.header-cta{border-color:#c6a45e!important;color:#9c7938!important;border-radius:14px!important}
+.hero::before{background:linear-gradient(180deg,rgba(28,24,18,.015) 0%,rgba(28,24,18,.035) 58%,rgba(28,24,18,.09) 100%)!important}
+.hero-title{font-weight:700!important;line-height:1.06!important}
+.hero-title-divider{display:none!important}
+.hero-title .hero-rotating-word{min-width:4.25em!important}
+.hero-subtitle{max-width:790px!important;margin-top:17px!important}
+/* Different from the competitor's one-line search strip: editorial two-tier finder card. */
+.hero-search{width:min(1010px,100%)!important;min-height:0!important;margin:34px auto 0!important;padding:17px 19px 16px!important;display:grid!important;grid-template-columns:205px minmax(0,1fr) 116px 168px!important;grid-template-rows:auto 62px!important;align-items:end!important;gap:12px!important;border:1px solid rgba(255,255,255,.96)!important;border-radius:22px!important;background:#fff!important;box-shadow:0 18px 48px rgba(37,31,20,.15),0 2px 8px rgba(37,31,20,.05)!important}
+.hero-search-kicker{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 16px;padding:0 2px 10px;border-bottom:1px solid #f0ece4;text-align:left}
+.hero-search-kicker>span{grid-column:1/-1;color:#a88a4d;font-size:8px;font-weight:700;letter-spacing:1.7px;line-height:1.3}
+.hero-search-kicker strong{color:#38342d;font-size:14px;font-weight:600;line-height:1.35}
+.hero-search-kicker a{grid-column:2;grid-row:2;color:#98783c;font-size:10px;font-weight:600;white-space:nowrap}
+.hero-search-kicker a b{font-size:13px;margin-left:4px}
+.hero-search-select-wrap{position:relative!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:stretch!important;gap:4px!important;height:62px!important;min-width:0!important;padding:0 14px!important;border:1px solid #eee8dc!important;border-radius:12px!important;background:#fcfbf8!important;text-align:left!important}
+.hero-field-label{display:block;color:#938b7d;font-size:8px;font-weight:700;letter-spacing:1.15px;line-height:1.3}
+.hero-type-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0;border:0;background:transparent;color:#37332c;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;text-align:left;cursor:pointer}
+.hero-type-trigger svg{width:15px;height:15px;fill:none;stroke:#8f7746;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+#hero-property-type{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;clip-path:inset(50%)!important}
+.hero-type-menu{position:absolute;top:calc(100% + 9px);left:0;right:0;z-index:30;display:grid;padding:7px;border:1px solid #e9dfca;border-radius:13px;background:#fff;box-shadow:0 16px 38px rgba(42,35,24,.16)}
+.hero-type-menu[hidden]{display:none!important}
+.hero-type-menu button{width:100%;padding:10px 11px;border:0;border-radius:8px;background:#fff;color:#514b41;font-family:'Poppins',sans-serif;font-size:11px;font-weight:500;text-align:left;cursor:pointer;transition:background .18s ease,color .18s ease}
+.hero-type-menu button:hover,.hero-type-menu button:focus-visible{background:#f8f4eb;color:#947536;outline:0}
+.hero-location-field{height:62px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 15px;border:1px solid #eee8dc;border-radius:12px;background:#fcfbf8;text-align:left}
+.hero-location-field input{height:24px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;font-size:11px!important;color:#37332c!important}
+.hero-location-field input:focus{outline:0!important}
+.hero-location-field:focus-within{border-color:#c7aa70;box-shadow:0 0 0 3px rgba(180,147,77,.10)}
+.hero-location-field input::placeholder{color:#989186!important}
+.hero-filter-toggle{width:100%!important;height:62px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;border:1px solid #e8dfcd!important;border-radius:12px!important;background:#fff!important;color:#8e713a!important;font-family:'Poppins',sans-serif!important;font-size:11px!important;font-weight:600!important}
+.hero-filter-toggle svg{width:18px!important;height:18px!important}
+.hero-filter-toggle:hover,.hero-filter-toggle[aria-expanded=true]{background:#f9f5ec!important;border-color:#d6c49e!important}
+.hero-search-button{height:62px!important;border-radius:12px!important;background:#b4934d!important;font-size:12px!important;letter-spacing:.1px!important}
+.hero-search-button:hover{background:#96783d!important}
+.hero-search-button svg{width:17px!important;height:17px!important}
+.hero-filter-panel{top:calc(100% + 10px)!important;right:0!important;width:min(520px,calc(100vw - 40px))!important;padding:19px 20px!important;border:1px solid #e9dfca!important;border-radius:16px!important;box-shadow:0 18px 46px rgba(37,31,20,.17)!important}
+.hero-filter-panel-heading strong{font-size:13px!important;color:#37332c!important}
+.hero-filter-chips button{border-color:#e9dfca!important;background:#fff!important;color:#5d5548!important}
+.hero-filter-chips button:hover{background:#f8f4eb!important;border-color:#c8ad76!important;color:#947536!important}
+.hero.filters-open .scroll-cue{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+.scroll-cue{bottom:17px!important;transition:opacity .18s ease,visibility .18s ease!important}
+@media(max-width:1100px){.hero-search{grid-template-columns:180px minmax(0,1fr) 100px 145px!important;gap:9px!important}.hero-search-kicker strong{font-size:13px!important}}
+@media(max-width:900px){.hero-search{width:min(760px,100%)!important;grid-template-columns:170px minmax(0,1fr) 95px 135px!important;grid-template-rows:auto 58px!important;padding:14px!important}.hero-search-select-wrap,.hero-location-field,.hero-filter-toggle,.hero-search-button{height:58px!important}.hero-search-kicker{padding-bottom:9px!important}}
+@media(max-width:600px){
+ .brand-mark img{filter:brightness(0) saturate(100%) invert(61%) sepia(25%) saturate(710%) hue-rotate(7deg) brightness(91%) contrast(88%)!important}
+ .hero{overflow:visible!important;padding:38px 16px 72px!important;min-height:calc(100svh - 68px)!important}
+ .hero::before{background:linear-gradient(180deg,rgba(28,24,18,.025),rgba(28,24,18,.09))!important}
+ .hero-title{font-size:clamp(34px,9vw,48px)!important;line-height:1.12!important;flex-wrap:wrap!important;row-gap:0!important;column-gap:8px!important;justify-content:center!important}
+ .hero-title .hero-rotating-word{min-width:0!important}
+ .hero-subtitle{max-width:340px!important;margin-top:13px!important;font-size:12px!important;line-height:1.65!important}
+ .hero-search{display:grid!important;grid-template-columns:1fr 1fr!important;grid-template-rows:auto auto auto auto!important;gap:8px!important;margin-top:23px!important;padding:13px!important;border-radius:18px!important}
+ .hero-search-kicker{grid-column:1/-1;grid-template-columns:1fr;gap:4px;padding-bottom:10px}
+ .hero-search-kicker a{grid-column:1;grid-row:auto;margin-top:2px}
+ .hero-search-select-wrap{grid-column:1/-1;height:57px!important}
+ .hero-location-field{grid-column:1/-1;height:57px!important}
+ .hero-filter-toggle{grid-column:1;height:48px!important}
+ .hero-search-button{grid-column:2;height:48px!important;font-size:11px!important}
+ .hero-filter-panel{position:absolute!important;top:calc(100% + 8px)!important;left:0!important;right:0!important;width:100%!important;margin:0!important;padding:15px!important;box-shadow:0 14px 35px rgba(37,31,20,.18)!important}
+ .hero.filters-open .scroll-cue{display:none!important}
+ .scroll-cue{bottom:12px!important}
+}
+@media(prefers-reduced-motion:reduce){.hero.filters-open .scroll-cue{transition:none!important}}
+</style>
+
 </head>
 <body id="top">
 <header class="site-header">
@@ -1362,22 +1433,20 @@ strong,b{font-weight:500!important;color:#4A4A4A!important}
       <p class="hero-subtitle">Explore premium homes, prime plots and smarter property opportunities across Faridabad.</p>
 
       <form class="hero-search" id="hero-search-form" role="search">
-        <label class="hero-search-select-wrap" for="hero-property-type">
-          <select id="hero-property-type" name="property-type" aria-label="Choose property type">
-            <option value="">All Properties</option>
-            <option value="apartment">Apartments</option>
-            <option value="residential plot">Residential Plots</option>
-            <option value="floors">Independent Floors</option>
-            <option value="commercial">Commercial</option>
+        <div class="hero-search-kicker"><span>PROPERTY FINDER</span><strong>Let’s find your next address</strong><a href="#properties">Explore all properties <b>↗</b></a></div>
+        <div class="hero-search-select-wrap" id="hero-type-picker">
+          <span class="hero-field-label">I AM LOOKING FOR</span>
+          <button class="hero-type-trigger" id="hero-type-trigger" type="button" aria-expanded="false" aria-controls="hero-type-menu"><span id="hero-type-current">All properties</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg></button>
+          <select id="hero-property-type" name="property-type" aria-label="Choose property type" tabindex="-1">
+            <option value="">All Properties</option><option value="apartment">Apartments</option><option value="residential plot">Residential Plots</option><option value="floors">Independent Floors</option><option value="commercial">Commercial</option>
           </select>
-        </label>
-        <input id="hero-location" name="location" type="search" placeholder="Project, sector, neighbourhood or location..." aria-label="Search by project, sector or location">
-        <button class="hero-filter-toggle" id="hero-filter-toggle" type="button" aria-label="Show quick filters" aria-expanded="false" aria-controls="hero-filter-panel">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3m4 0h9M13 4v6M7 14v6"/></svg>
-        </button>
-        <button class="hero-search-button" type="submit">Search
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.7"></circle><path d="m16 16 4.2 4.2"></path></svg>
-        </button>
+          <div class="hero-type-menu" id="hero-type-menu" hidden>
+            <button type="button" data-type-value="">All properties</button><button type="button" data-type-value="apartment">Apartments</button><button type="button" data-type-value="residential plot">Residential plots</button><button type="button" data-type-value="floors">Independent floors</button><button type="button" data-type-value="commercial">Commercial</button>
+          </div>
+        </div>
+        <label class="hero-location-field"><span class="hero-field-label">LOCATION OR PROJECT</span><input id="hero-location" name="location" type="search" placeholder="Enter a sector, project or location..." aria-label="Search by project, sector or location"></label>
+        <button class="hero-filter-toggle" id="hero-filter-toggle" type="button" aria-label="Show quick filters" aria-expanded="false" aria-controls="hero-filter-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3m4 0h9M13 4v6M7 14v6"/></svg><span>Filters</span></button>
+        <button class="hero-search-button" type="submit">Find properties <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
         <div class="hero-filter-panel" id="hero-filter-panel" hidden>
           <div class="hero-filter-panel-heading">
             <div><strong>Quick filters</strong><span>Choose a property type or popular location</span></div>
@@ -1979,6 +2048,24 @@ if(enquiryForm){
   const toggle = document.querySelector('#hero-filter-toggle');
   const panel = document.querySelector('#hero-filter-panel');
   const typeInput = document.querySelector('#hero-property-type');
+  const typePicker = document.querySelector('#hero-type-picker');
+  const typeTrigger = document.querySelector('#hero-type-trigger');
+  const typeMenu = document.querySelector('#hero-type-menu');
+  const typeCurrent = document.querySelector('#hero-type-current');
+  const setType = (value, label) => {
+    if (typeInput) typeInput.value = value;
+    if (typeCurrent) typeCurrent.textContent = label;
+    if (typeMenu) typeMenu.hidden = true;
+    if (typeTrigger) typeTrigger.setAttribute('aria-expanded', 'false');
+  };
+  typeTrigger?.addEventListener('click', () => {
+    if (!typeMenu) return;
+    typeMenu.hidden = !typeMenu.hidden;
+    typeTrigger.setAttribute('aria-expanded', String(!typeMenu.hidden));
+  });
+  typeMenu?.querySelectorAll('[data-type-value]').forEach(option => {
+    option.addEventListener('click', () => setType(option.dataset.typeValue || '', option.textContent.trim()));
+  });
   const locationInput = document.querySelector('#hero-location');
   const clearButton = document.querySelector('#hero-filter-clear');
   const cards = Array.from(document.querySelectorAll('.properties-grid .property-card'));
@@ -1988,15 +2075,19 @@ if(enquiryForm){
   const closePanel = () => {
     if (panel) panel.hidden = true;
     if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    if (typeMenu) typeMenu.hidden = true;
+    if (typeTrigger) typeTrigger.setAttribute('aria-expanded', 'false');
+    document.querySelector('.hero')?.classList.remove('filters-open');
   };
   toggle?.addEventListener('click', () => {
     if (!panel) return;
     panel.hidden = !panel.hidden;
     toggle.setAttribute('aria-expanded', String(!panel.hidden));
+    document.querySelector('.hero')?.classList.toggle('filters-open', !panel.hidden);
   });
   panel?.querySelectorAll('[data-filter-type]').forEach(chip => {
     chip.addEventListener('click', () => {
-      if (typeInput) typeInput.value = chip.dataset.filterType || '';
+      setType(chip.dataset.filterType || '', chip.textContent.trim());
       closePanel();
     });
   });
@@ -2007,12 +2098,16 @@ if(enquiryForm){
     });
   });
   clearButton?.addEventListener('click', () => {
-    if (typeInput) typeInput.value = '';
+    setType('', 'All properties');
     if (locationInput) locationInput.value = '';
     closePanel();
   });
   document.addEventListener('click', event => {
     if (panel && !panel.hidden && !form.contains(event.target)) closePanel();
+    if (typeMenu && !typeMenu.hidden && typePicker && !typePicker.contains(event.target)) {
+      typeMenu.hidden = true;
+      typeTrigger?.setAttribute('aria-expanded', 'false');
+    }
   });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closePanel();
