@@ -1737,6 +1737,105 @@ strong,b{font-weight:500!important;color:#4A4A4A!important}
 }
 </style>
 
+<style id="skya-spotlight-v9">
+/* SGA — featured new project / SKYA spotlight. Image files can be added later:
+   skya-main.webp, skya-detail-01.webp, skya-detail-02.webp */
+.skya-spotlight{
+  --skya-gold:#b89550;
+  --skya-gold-dark:#967338;
+  --skya-ink:#292824;
+  --skya-muted:#706b62;
+  --skya-line:#e8dfcf;
+  position:relative;isolation:isolate;overflow:hidden;
+  padding:clamp(76px,8vw,112px) clamp(22px,5.3vw,84px) clamp(82px,8vw,116px);
+  background:
+    radial-gradient(ellipse at 88% 12%,rgba(226,211,180,.26),transparent 35%),
+    linear-gradient(135deg,#fbfaf7 0%,#f6f2e9 54%,#fbfaf7 100%);
+  border-bottom:1px solid #e9e0d1;
+}
+.skya-spotlight:before{
+  content:"";position:absolute;z-index:-1;left:-170px;bottom:-240px;width:460px;height:460px;
+  border-radius:50%;background:radial-gradient(circle,rgba(222,207,177,.20),transparent 70%);pointer-events:none;
+}
+.skya-spotlight-inner{position:relative;width:100%;max-width:1390px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);align-items:center;gap:clamp(42px,6vw,88px)}
+.skya-copy{min-width:0;max-width:570px}
+.skya-eyebrow{display:flex;align-items:center;gap:11px;margin:0 0 20px;color:var(--skya-gold-dark);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.skya-eyebrow:before{content:"";width:27px;height:1px;background:var(--skya-gold)}
+.skya-title{margin:0;color:var(--skya-ink);font-family:'Poppins',sans-serif;font-size:clamp(37px,4.15vw,59px);font-weight:650;line-height:1.08;letter-spacing:-.06em;text-wrap:balance}
+.skya-title span{color:var(--skya-gold);white-space:nowrap}
+.skya-lead{max-width:540px;margin:20px 0 0;color:var(--skya-muted);font-family:'Poppins',sans-serif;font-size:14px;line-height:1.85}
+.skya-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:23px}
+.skya-meta span{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:7px 11px;border:1px solid #e5dac5;border-radius:999px;background:rgba(255,255,255,.58);color:#625b4f;font-size:9px;font-weight:650;letter-spacing:.07em;text-transform:uppercase}
+.skya-meta span:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--skya-gold)}
+.skya-price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:29px}
+.skya-price-card{min-width:0;padding:17px 17px 16px;border:1px solid #e6dccb;border-radius:12px;background:rgba(255,255,255,.76);box-shadow:0 9px 26px rgba(59,48,30,.045);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.skya-price-card:hover{transform:translateY(-3px);border-color:#d5c29d;box-shadow:0 15px 30px rgba(59,48,30,.08)}
+.skya-price-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}
+.skya-price-top span:first-child{color:#80796e;font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.skya-price-tag{padding:5px 8px;border-radius:5px;background:#f3ecdc;color:#8d6c32;font-size:8px;font-weight:700;letter-spacing:.08em}
+.skya-price-value{margin:0;color:var(--skya-gold-dark);font-family:'Poppins',sans-serif;font-size:clamp(21px,2.25vw,30px);font-weight:700;line-height:1.15;letter-spacing:-.045em;white-space:nowrap}
+.skya-price-size{margin:7px 0 0;color:#817a6f;font-size:10px;line-height:1.5}
+.skya-price-footnote{margin:12px 0 0;color:#968f83;font-size:9px;line-height:1.55}
+.skya-actions{display:flex;flex-wrap:wrap;align-items:center;gap:19px;margin-top:26px}
+.skya-primary-cta{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:49px;padding:0 20px;border:1px solid var(--skya-gold);border-radius:5px;background:var(--skya-gold);color:#fff!important;font-size:11px;font-weight:700;letter-spacing:.015em;box-shadow:0 8px 20px rgba(151,117,54,.15);transition:background .25s ease,transform .25s ease,box-shadow .25s ease}
+.skya-primary-cta span{font-size:17px;transition:transform .25s ease}
+.skya-primary-cta:hover{background:#a78340;transform:translateY(-2px);box-shadow:0 12px 24px rgba(151,117,54,.2)}
+.skya-primary-cta:hover span{transform:translateX(3px)}
+.skya-secondary-cta{display:inline-flex;align-items:center;gap:8px;color:#74613d!important;font-size:10px;font-weight:700;letter-spacing:.04em;transition:gap .25s ease}
+.skya-secondary-cta:hover{gap:13px}
+.skya-gallery{position:relative;min-width:0;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(130px,.78fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:13px;min-height:490px;padding:10px 9px 12px 0}
+.skya-gallery:before{content:"";position:absolute;z-index:-1;top:-10px;right:-8px;width:58%;height:96%;border:1px solid #d8c59f;transform:translate(10px,9px)}
+.skya-image-frame{position:relative;min-width:0;min-height:0;overflow:hidden;margin:0;border:6px solid rgba(255,255,255,.94);background:linear-gradient(145deg,#d9d0bd 0%,#eee8dc 48%,#c6b48f 100%);box-shadow:0 16px 42px rgba(55,45,29,.12)}
+.skya-image-frame:before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,rgba(255,255,255,.14),transparent 45%,rgba(122,94,48,.10));pointer-events:none}
+.skya-image-frame:after{content:attr(data-placeholder);position:absolute;inset:0;z-index:1;display:grid;place-items:center;padding:20px;color:rgba(89,73,47,.66);font-size:9px;font-weight:700;letter-spacing:.17em;text-align:center;text-transform:uppercase;pointer-events:none}
+.skya-image-frame.has-image:after{display:none}
+.skya-image-frame img{position:absolute;inset:0;z-index:0;display:block;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease,transform .8s cubic-bezier(.2,.75,.25,1)}
+.skya-image-frame.has-image img{opacity:1}
+.skya-image-frame:hover img{transform:scale(1.035)}
+.skya-image-main{grid-column:1;grid-row:1 / span 2;min-height:490px}
+.skya-image-small{min-height:0}
+.skya-image-index{position:absolute;z-index:2;left:11px;top:11px;padding:6px 8px;border:1px solid rgba(255,255,255,.78);background:rgba(255,255,255,.82);color:#725b32;font-size:8px;font-weight:750;letter-spacing:.12em}
+.skya-gallery-note{position:absolute;right:11px;bottom:-13px;color:#8c7b5d;font-size:8px;font-weight:650;letter-spacing:.18em;text-transform:uppercase}
+@media(max-width:1050px){
+  .skya-spotlight-inner{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:34px}
+  .skya-gallery{min-height:440px;grid-template-columns:minmax(0,1.35fr) minmax(115px,.8fr)}
+  .skya-image-main{min-height:440px}
+  .skya-price-card{padding:14px 13px}
+}
+@media(max-width:820px){
+  .skya-spotlight{padding:68px 24px 76px}
+  .skya-spotlight-inner{grid-template-columns:1fr;gap:35px}
+  .skya-copy{max-width:720px}
+  .skya-title{font-size:clamp(36px,7vw,54px)}
+  .skya-gallery{width:100%;min-height:430px;grid-template-columns:minmax(0,1.5fr) minmax(125px,.8fr)}
+  .skya-image-main{min-height:430px}
+}
+@media(max-width:560px){
+  .skya-spotlight{padding:58px 18px 66px}
+  .skya-eyebrow{font-size:8px;letter-spacing:.15em;margin-bottom:15px}
+  .skya-title{font-size:clamp(34px,9vw,43px);line-height:1.1}
+  .skya-lead{font-size:12px;line-height:1.75;margin-top:15px}
+  .skya-meta{margin-top:17px;gap:7px}
+  .skya-meta span{font-size:8px;padding:6px 9px}
+  .skya-price-grid{gap:8px;margin-top:22px}
+  .skya-price-card{padding:13px 11px;border-radius:9px}
+  .skya-price-top{align-items:flex-start;flex-direction:column;gap:6px;margin-bottom:11px}
+  .skya-price-value{font-size:clamp(18px,5.5vw,24px)}
+  .skya-price-size{font-size:9px}
+  .skya-actions{gap:14px;margin-top:21px}
+  .skya-primary-cta{min-height:46px;padding:0 15px;font-size:10px}
+  .skya-secondary-cta{font-size:9px}
+  .skya-gallery{min-height:335px;grid-template-columns:minmax(0,1.3fr) minmax(100px,.8fr);gap:8px;padding:6px 6px 9px 0}
+  .skya-gallery:before{right:-4px;top:-5px;transform:translate(5px,5px)}
+  .skya-image-frame{border-width:4px}
+  .skya-image-main{min-height:335px}
+  .skya-image-index{left:7px;top:7px;padding:5px 6px;font-size:7px}
+  .skya-gallery-note{font-size:7px;right:5px;bottom:-12px;letter-spacing:.11em}
+}
+@media(prefers-reduced-motion:reduce){
+  .skya-price-card,.skya-primary-cta,.skya-secondary-cta,.skya-image-frame img{transition:none!important}
+}
+</style>
 </head>
 <body id="top">
 <header class="site-header">
@@ -1897,6 +1996,54 @@ strong,b{font-weight:500!important;color:#4A4A4A!important}
   <span class="director-section-break-caption">TRUSTED GUIDANCE. SELECTED PROPERTIES.</span>
   <span class="director-section-break-line"></span>
 </div>
+
+<section class="skya-spotlight" id="skya-spotlight" aria-labelledby="skya-spotlight-heading">
+  <div class="skya-spotlight-inner">
+    <div class="skya-copy">
+      <p class="skya-eyebrow">New residential opportunity · Faridabad</p>
+      <h2 class="skya-title" id="skya-spotlight-heading">Meet your next address at <span>SKYA.</span></h2>
+      <p class="skya-lead">Explore 2 and 3 BHK residential options in Sector 144, Faridabad. Compare the available configurations and speak with SGA for project information, floor plans and the latest availability.</p>
+      <div class="skya-meta" aria-label="Project highlights">
+        <span>Sector 144 · Faridabad</span>
+        <span>2 &amp; 3 BHK residences</span>
+      </div>
+      <div class="skya-price-grid" aria-label="Advertised starting options">
+        <article class="skya-price-card">
+          <div class="skya-price-top"><span>Residential option 01</span><span class="skya-price-tag">2 BHK</span></div>
+          <p class="skya-price-value">₹53.5 Lakh*</p>
+          <p class="skya-price-size">1,140 sq. ft. onwards*</p>
+        </article>
+        <article class="skya-price-card">
+          <div class="skya-price-top"><span>Residential option 02</span><span class="skya-price-tag">3 BHK</span></div>
+          <p class="skya-price-value">₹74 Lakh*</p>
+          <p class="skya-price-size">1,440 sq. ft. onwards*</p>
+        </article>
+      </div>
+      <p class="skya-price-footnote">*Advertised starting prices and areas as provided. Confirm current availability, specifications, additional charges and final pricing with the project team.</p>
+      <div class="skya-actions">
+        <a class="skya-primary-cta" href="#contact">Request project details <span aria-hidden="true">↗</span></a>
+        <a class="skya-secondary-cta" href="#properties">Explore all properties <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="skya-gallery" aria-label="SKYA project image gallery">
+      <!-- Replace these three image files when the approved SKYA visuals are ready. -->
+      <figure class="skya-image-frame skya-image-main" data-placeholder="Main SKYA project visual · add skya-main.webp">
+        <img src="skya-main.webp" alt="SKYA residential project main visual" loading="lazy">
+        <span class="skya-image-index">01 / PROJECT VIEW</span>
+      </figure>
+      <figure class="skya-image-frame skya-image-small" data-placeholder="Supporting visual · add skya-detail-01.webp">
+        <img src="skya-detail-01.webp" alt="SKYA residential project supporting visual one" loading="lazy">
+        <span class="skya-image-index">02 / DETAIL</span>
+      </figure>
+      <figure class="skya-image-frame skya-image-small" data-placeholder="Supporting visual · add skya-detail-02.webp">
+        <img src="skya-detail-02.webp" alt="SKYA residential project supporting visual two" loading="lazy">
+        <span class="skya-image-index">03 / LIFESTYLE</span>
+      </figure>
+      <span class="skya-gallery-note">A closer look at SKYA · Sector 144</span>
+    </div>
+  </div>
+</section>
 
 <section class="featured-properties" id="properties" aria-labelledby="properties-heading"><div class="properties-container">
 <div class="properties-heading"><span class="properties-eyebrow">CURATED PROPERTY COLLECTION</span><h2 id="properties-heading">Featured Properties</h2><p>Explore handpicked properties for living and investment.</p></div>
@@ -2576,6 +2723,23 @@ if(enquiryForm){
     if(stats) observer.observe(stats);
     else counters.forEach(animateCounter);
   } else counters.forEach(animateCounter);
+})();
+</script>
+
+<script id="skya-image-placeholder-handler-v9">
+(function(){
+  const frames = document.querySelectorAll('#skya-spotlight .skya-image-frame img');
+  frames.forEach((img) => {
+    const frame = img.closest('.skya-image-frame');
+    const markLoaded = () => {
+      if (img.naturalWidth > 0) frame.classList.add('has-image');
+    };
+    if (img.complete) {
+      markLoaded();
+    } else {
+      img.addEventListener('load', markLoaded, { once: true });
+    }
+  });
 })();
 </script>
 
